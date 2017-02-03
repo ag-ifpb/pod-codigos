@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;socket&apos; to &apos;server-socket&apos;&#x0A;- Original element: &apos;socket&apos;&#x0A;- Renamed element: &apos;socket&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;socket&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=socket" name="server-socket" references="true" stamp="1485440932076" version="1.0"/>
+</session>

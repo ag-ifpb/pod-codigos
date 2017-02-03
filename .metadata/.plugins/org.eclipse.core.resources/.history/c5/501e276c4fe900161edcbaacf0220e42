@@ -1,0 +1,17 @@
+package ag.ifpb.pod.ms;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//instanciar os elementos principais
+		Register register = new Register();
+		Notifier notifier = new Notifier(register);
+		MessageManager manager = new MessageManager();
+		TaskManager taskManager = new TaskManager(register, manager, notifier);
+		//programar o background
+		while(true){
+			taskManager.run();
+		}
+	}
+	
+}

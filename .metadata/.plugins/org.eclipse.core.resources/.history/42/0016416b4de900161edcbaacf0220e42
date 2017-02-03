@@ -1,0 +1,40 @@
+package ag.ifpb.pod.ms;
+
+import java.util.Collections;
+import java.util.List;
+
+public class TaskManager implements Runnable{
+	private final Register register;
+	private final MessageManager messageManager;
+
+	
+	private List<String> listSubscribers(){
+		List<String> subscribersIds = register.listAll();
+		return Collections.unmodifiableList(subscribersIds);
+	}
+	
+	private List<Message> listMessages(String subscriber){
+		List<Message> messages = messageManager.find(subscriber);
+		return Collections.unmodifiableList(messages);
+	}
+	
+	private void notifyAndRemoveMessage(String subscriber, Message message){
+		
+	}
+	
+	@Override
+	public void run() {
+		// listar subscritores
+		List<String> subscribers = listSubscribers();
+		//-- para cada subscritor, 
+		for (String subscriber : subscribers) {
+			//-- verificar se existem mensagens
+			List<Message> messages = listMessages(subscriber);
+			//-- caso exista, notifa o subscritor
+			for (Message message : messages) {
+				notifyAndRemoveMessage(subscriber, message);
+			}
+		}
+	}
+	
+}

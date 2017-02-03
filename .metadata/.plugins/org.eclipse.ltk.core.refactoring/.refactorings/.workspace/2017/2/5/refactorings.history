@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;ag-ifpb-pod-ms&apos; to &apos;ag-ifpb-pod-ms-eventbus&apos;&#x0A;- Original element: &apos;ag-ifpb-pod-ms&apos;&#x0A;- Renamed element: &apos;ag-ifpb-pod-ms&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;ag-ifpb-pod-ms&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=ag-ifpb-pod-ms" name="ag-ifpb-pod-ms-eventbus" references="true" stamp="1486039005185" version="1.0"/>
+</session>
