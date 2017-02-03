@@ -1,0 +1,56 @@
+package ag.ifpb.pod.ms;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+public class Main {
+	
+	private String[] extract(String text){
+		String t = "---123456---";
+		if (text.startsWith(t) && text.endsWith(t)){
+			return text.replaceAll(t, "").split("|");
+		}
+		throw new RuntimeException("Mensagem estruturada incorretamente.");
+	}
+
+	public static void main(String[] args) {
+		//instanciar os elementos principais
+		Register register = new Register();
+		Notifier notifier = new Notifier(register);
+		MessageManager manager = new MessageManager();
+		TaskManager taskManager = new TaskManager(register, manager, notifier);
+		//programar o background
+		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+		//excutar uma thread depois dos primeiros 2s e daí por diante a cada 5s.
+		executor.scheduleAtFixedRate(taskManager, 2000, 5000, TimeUnit.MILLISECONDS);
+		//
+		ServerSocket serverSocket = new ServerSocket(10999);
+		while(true){
+			//aguarando a conexão com o publicador
+			Socket clientSocket = serverSocket.accept();
+			//fazer a leitura da requisição
+			byte[] b = new byte[1024];
+			clientSocket.getInputStream().read(b, 0, 1024);
+			String textMessage = new String(b).trim();
+			//recuperar os dados da mensagem
+			String publisherId;//0
+			String subscriberId;//1
+			String text;//2
+			//persistir a mensagem
+			String msgId = UUID.randomUUID().toString();
+			Message message = new Message(msgId, publisherId, subscriberId, text);
+			manager.publish(message);
+			//informar ao publicador que a mensagem foi publicada
+			clientSocket.getOutputStream().write("#OK#".getBytes());
+			//encerrando a conexão
+			clientSocket.close();
+			
+		}
+		
+	}
+	
+}
