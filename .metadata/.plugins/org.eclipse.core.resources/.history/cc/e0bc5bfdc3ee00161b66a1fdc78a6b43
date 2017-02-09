@@ -1,0 +1,34 @@
+package ag.ifpb.pod.ms;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Subscriber {
+	private final static String EVENTBUS_HOST = "localhost";
+	private final static Integer EVENTBUS_PORT = 10998;
+	private final static String TOKEN = "---123456---";
+	public final static String ID = "aristofanio-subscriber@hotmail.com";
+	
+	private Socket connect() throws UnknownHostException, IOException{
+		Socket socket = new Socket(EVENTBUS_HOST, EVENTBUS_PORT);
+		return socket;
+	}
+	
+	private void send(Socket socket) throws IOException{
+		StringBuilder sb = new StringBuilder();
+		sb.append(TOKEN);
+		sb.append(ID);
+		sb.append(TOKEN);
+		socket.getOutputStream().write(sb.toString().getBytes());
+	}
+	
+	public void subscriber(){
+		//fazer
+	}
+	
+	public void notify(String pubId, String msg){
+		System.out.println(String.format("Mensagem recebida de %s: %s", pubId, msg));
+	}
+
+}

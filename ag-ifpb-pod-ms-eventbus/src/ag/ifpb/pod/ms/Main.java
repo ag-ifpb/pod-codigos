@@ -9,6 +9,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
+	final static String TOKEN = "---123456---";
 	
 	/**
 	 * Extrai os dados da mensagem
@@ -20,30 +21,41 @@ public class Main {
 	 * @return
 	 */
 	private static String[] extract(String text){
-		String t = "---123456---";
-		if (text.startsWith(t) && text.endsWith(t)){
-			return text.replaceAll(t, "").split("\\|");
+		if (text.startsWith(TOKEN) && text.endsWith(TOKEN)){
+			return text.replaceAll(TOKEN, "").split("\\|");
 		}
 		throw new RuntimeException("Mensagem estruturada incorretamente.");
 	}
-
-	public static void main(String[] args) throws IOException {
-		//instanciar os elementos principais
-		Register register = new Register();
-		Notifier notifier = new Notifier(register);
-		MessageManager manager = new MessageManager();
-		TaskManager taskManager = new TaskManager(register, manager, notifier);
-		//programar o background
-		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-		//excutar uma thread depois dos primeiros 2s e daí por diante a cada 5s.
-		executor.scheduleAtFixedRate(taskManager, 2000, 5000, TimeUnit.MILLISECONDS);
-		//
-		ServerSocket serverSocket = new ServerSocket(10999);
+	
+	private static void createSubscriberServer(Register register) throws IOException {
+		ServerSocket subscriberServerSocket = new ServerSocket(10998);
+		while(true){
+			//log
+			System.out.println("Aguardando conexão do subscriber.");
+			//connect
+			Socket socket = subscriberServerSocket.accept();
+			//
+			System.out.println("Conexão estabelecida com o sbscriber.");
+			System.out.println("Fazendo a leitura dos dados do subscriber.");
+			//read id
+			byte[] b = new byte[1024];
+			socket.getInputStream().read(b);
+			String msg = new String(b).trim();
+			String subId = msg.replaceAll(TOKEN, "");
+			//log
+			System.out.println("Registrando um subscriber: " + subId);
+			//register
+			register.register(subId, socket);
+		}
+	}
+	
+	private static void createPublisherServer(MessageManager manager) throws IOException {
+		ServerSocket publisherServerSocket = new ServerSocket(10999);
 		while(true){
 			//log
 			System.out.println("Aguardando conexão do publisher.");
 			//aguarando a conexão com o publicador
-			Socket clientSocket = serverSocket.accept();
+			Socket clientSocket = publisherServerSocket.accept();
 			//log
 			System.out.println("Conexão estabelecida com o publisher.");
 			System.out.println("Fazendo a leitura dos dados.");
@@ -61,7 +73,7 @@ public class Main {
 			//log
 			System.out.println("Persistindo mensagem: " + textMessage);
 			//persistir a mensagem
-			String msgId = UUID.randomUUID().toString();
+			String msgId = UUID.randomUUID().toString();//<---------
 			Message message = new Message(msgId, publisherId, subscriberId, text);
 			manager.publish(message);
 			//log
@@ -72,9 +84,41 @@ public class Main {
 			System.out.println("Encerrando conexão");
 			//encerrando a conexão
 			clientSocket.close();
-			
 		}
-		
+	}
+
+	public static void main(String[] args) throws IOException {
+		//instanciar os elementos principais
+		Register register = new Register();
+		Notifier notifier = new Notifier(register);
+		MessageManager manager = new MessageManager();
+		TaskManager taskManager = new TaskManager(register, manager, notifier);
+		//programar o background
+		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+		//excutar uma thread depois dos primeiros 2s e daí por diante a cada 5s.
+		executor.scheduleAtFixedRate(taskManager, 2000, 5000, TimeUnit.MILLISECONDS);
+		//publisher server
+		Thread pubThread = new Thread(){
+			public void run() {
+				try {
+					createPublisherServer(manager);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}//thread
+			};
+		};
+		pubThread.start();
+		//subscriber server
+		Thread subThread = new Thread(){
+			public void run() {
+				try {
+					createSubscriberServer(register);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}//thread
+			};
+		};
+		subThread.start();
 	}
 	
 }

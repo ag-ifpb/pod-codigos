@@ -29,9 +29,15 @@ public class Notifier {
 		Socket socket = register.find(subscriberId);
 		//
 		try {
-			socket.getOutputStream().write(TOKEN.getBytes());//início da msg
-			socket.getOutputStream().write(message.getText().getBytes());
-			socket.getOutputStream().write(TOKEN.getBytes());//fim da msg
+			//
+			StringBuilder sb = new StringBuilder();
+			sb.append(TOKEN);//inicio da mensagem
+			sb.append(message.getPublisherId());
+			sb.append("|");
+			sb.append(message.getText());
+			sb.append(TOKEN);//fim da mensagem
+			//
+			socket.getOutputStream().write(sb.toString().getBytes());
 			//
 			socket.getOutputStream().flush();
 		}
