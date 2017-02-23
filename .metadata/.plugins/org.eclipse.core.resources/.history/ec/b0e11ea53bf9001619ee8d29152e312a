@@ -1,0 +1,47 @@
+
+public class Queue {
+	private int count = 0;
+	private People[] peoples = new People[50];
+	
+	private void organize(){
+		for (int i = 1; i < peoples.length; i++) {
+			People p = peoples[i];
+			peoples[i-1] = p;
+		}
+	}
+	
+	public /*synchronized*/ void push(People p){
+		if (!isFull()){
+			peoples[count-1] = p;
+			count++;
+		}
+		else {
+			throw new RuntimeException("A fila está cheia");
+		}
+	}
+	
+	public /*synchronized*/ People pop(){
+		if (!isEmpty()){
+			People p = peoples[0];
+			organize();
+			count--:
+			return p;
+		}
+		else {
+			throw new RuntimeException("A fila está vazia.");
+		}
+	}
+	
+	public int size(){
+		return count;
+	}
+	
+	public boolean isFull(){
+		return count == 50;
+	}
+	
+	public boolean isEmpty(){
+		return count == 0;
+	}
+	
+}

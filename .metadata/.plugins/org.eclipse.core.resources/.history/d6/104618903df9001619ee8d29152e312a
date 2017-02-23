@@ -1,0 +1,17 @@
+
+
+public class Attendante {
+	private final Queue queue;
+	
+	public Attendante(Queue queue) {
+		this.queue = queue;
+	}
+	
+	public void startService(){
+		
+	}
+	
+	public void stopService(){
+		
+	}
+}

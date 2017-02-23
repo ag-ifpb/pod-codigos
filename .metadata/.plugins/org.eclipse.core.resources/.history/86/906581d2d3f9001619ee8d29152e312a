@@ -1,0 +1,32 @@
+import java.lang.reflect.Executable;
+import java.util.Timer;
+import java.util.concurrent.ScheduledExecutorService;
+
+public class Engine {
+	private IncomingManager manager;
+	private Attendante attendante;
+	private Queue queue;
+	//time //90.0001s
+
+	public void exec(){
+		//
+		boolean _continue = true;
+		//isto ocorre depois dos primeiros 3s
+		if (_continue){
+			manager.exec();//t3
+		}
+		//
+		while(_continue){//<--90.000
+			if (!queue.isEmpty()){//90.00001s
+				//thread{
+					attendante.startService();//t1//90.0009
+					//aguardar dois segundos sleep()
+					attendante.stopService();//t2//92.0018
+				//}
+			}
+		}
+		//
+		//print (time) <--92.
+	}
+	
+}
