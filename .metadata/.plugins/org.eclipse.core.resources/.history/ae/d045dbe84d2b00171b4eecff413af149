@@ -1,0 +1,12 @@
+package ifpb;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MessageRepository {
+	private List<Message> list = new ArrayList<>();
+	
+	public List<Message> getList() {
+		return list;
+	}
+}

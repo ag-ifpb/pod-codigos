@@ -1,0 +1,43 @@
+package ag.proxyserver.reverse.impl;
+
+import java.io.InputStream;
+
+import ag.proxyserver.proxy.WebCamServer;
+import ag.proxyserver.reverse.ReverseServer;
+import ag.proxyserver.tmp.Commander;
+import ag.proxyserver.tmp.PlayCallback;
+import ag.proxyserver.tmp.WebCamCodeGenerator;
+import ag.proxyserver.tmp.WebCamCodeRepository;
+import ag.proxyserver.tmp.WebCamException;
+
+public class ReverseServerImpl implements ReverseServer {
+	private final WebCamServer webCamServer;
+
+	@Override
+	public String register(String oldCode) throws WebCamException {
+		//
+		if (oldCode == null){
+			String newCode = WebCamCodeGenerator.code();
+			WebCamCodeRepository.add(newCode);
+			return newCode;
+		}
+		//
+		if (!WebCamCodeRepository.exists(oldCode)){
+			throw new WebCamException(2002, "Código inexistente.");
+		}
+		//
+		return oldCode;
+	}
+
+	@Override
+	public String awaitCommand() throws WebCamException {
+		//criar um server
+		return commander.command();
+	}
+
+	@Override
+	public void transferStreamToProxy(int byteStream) throws WebCamException {
+		playCallback.callback(byteStream);
+	}
+
+}

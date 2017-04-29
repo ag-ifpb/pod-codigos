@@ -1,0 +1,35 @@
+package ag.proxyserver.proxy;
+
+import java.io.FileInputStream;
+
+import ag.proxyserver.reverse.ReverseServerException;
+
+/**
+ * IWebCam possui as funcionalidades da
+ * webcam como: registrar no servidor proxy,
+ * iniciar a filmagem e encaminhar stream para o proxy.
+ * 
+ * @author arigarcia
+ *
+ */
+public interface WebCam {
+
+	/**
+	 * Inicializar a leitura da webcam.
+	 * 
+	 * @throws ReverseServerException - disparado caso não consiga iniciar
+	 * o play (erro 3001).
+	 */
+	FileInputStream play() throws ReverseServerException;
+	
+
+	/**
+	 * Parar de transmitir o stream.
+	 * 
+	 * @throws ReverseServerException - disparado caso a webcam não 
+	 * esteja ligada (erro 6001) ou caso não consiga encerrar 
+	 * o stream (erro 6002)
+	 */
+	void stop(FileInputStream finput) throws ReverseServerException;
+	
+}

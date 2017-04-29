@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MessageRepository.java&apos; to &apos;async-receiver/src/ifpb&apos;&#x0A;- Original project: &apos;async-sender&apos;&#x0A;- Destination element: &apos;async-receiver/src/ifpb&apos;&#x0A;- Original element: &apos;ifpb.MessageRepository.java&apos;" description="Copy compilation unit" destination="=async-receiver/src&lt;ifpb" element1="/src&lt;ifpb{MessageRepository.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1493301674253" units="1" version="1.0"/>
+</session>

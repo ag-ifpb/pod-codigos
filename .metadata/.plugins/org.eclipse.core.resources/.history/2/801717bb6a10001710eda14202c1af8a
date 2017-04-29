@@ -1,0 +1,166 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class StreamServer {
+	
+	private static void result200(Socket socket, int length){
+		OutputStream output = socket.getOutputStream();
+		output.write("HTTP/1.1 200 OK\r\n".getBytes());
+		output.write(("Content-Length: "+ length + "\r\n").getBytes());
+		output.write("Content-Type: video/mp4\r\n".getBytes());
+		output.write("Accept-Ranges: bytes\r\n".getBytes());
+		output.write("Server: euserver\r\n".getBytes());
+		output.write("Connection: keep-alive\r\n".getBytes());
+		output.write(("ETag: \"1913579-" + System.currentTimeMillis() + "\"\r\n").getBytes());
+		output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+		output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+		output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n\r\n".getBytes());
+		//
+		int total = 0;
+		int received = 0;
+		long remaining = file.length();
+		//
+		//GZIPOutputStream out = new GZIPOutputStream(output);
+		while(true){
+			//
+			byte[] b = new byte[1024];
+			//
+			received = finput.read(b);
+			System.out.println("total lido: " + received);
+			if (received > 0){
+				output.write(b);
+				output.flush();
+				total += received;
+				if (!second && third) break;
+				//Thread.sleep(500);
+			}
+			System.out.println("total enviado: " + total);
+			//
+			if (remaining - total == 0){
+				break;
+			}
+		}
+		//
+		output.close();
+		socket.shutdownInput();
+		
+	}
+	
+	private static void requestResolver(Socket socket) throws IOException{
+		InputStreamReader reader = new InputStreamReader(socket.getInputStream());
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		while(true){
+			String line = bufferedReader.readLine();
+			if (line.contains("Upgrade-Insecure-Requests: 1")){
+				result200(socket);
+			}
+		}
+	}
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		//
+		ServerSocket serverSocket = new ServerSocket(10999);
+		//
+		boolean first = true;
+		boolean second = false;
+		boolean third = false;
+		//
+		while(true){
+			//
+			try {
+				//
+				Socket socket = serverSocket.accept();
+				//1st part
+				File file = new File("preview-app-iphone.mp4");
+				FileInputStream finput = new FileInputStream(file);
+				BufferedInputStream input = new BufferedInputStream(socket.getInputStream());
+				//
+				byte[] h = new byte[1024];
+				input.read(h);//tratamento http
+				//
+				System.out.println(new String(h).trim());
+				socket.shutdownInput();
+				//
+				//BufferedOutputStream output = new BufferedOutputStream(socket.getOutputStream());
+				OutputStream output = socket.getOutputStream();
+				if (first){
+					output.write("HTTP/1.1 200 OK\r\n".getBytes());
+					first = false;
+				}
+				else {
+					output.write("HTTP/1.1 206 Partial Content\r\n".getBytes());
+					if (second){
+						output.write("Content-Range:bytes 1867776-1913578/1913579\r\n".getBytes());
+						second = false;
+						third = true;
+					}
+					else if (third){
+						output.write("Content-Range:bytes 1868800-1913578/1913579\r\n".getBytes());
+					}
+					else {
+						output.write("Content-Range:bytes 0-1913578/1913579\r\n".getBytes());
+						second = true;
+					}
+				}
+				//output.write(("Content-Length: "+ file.length() + "\r\n").getBytes());
+				output.write("Content-Type: video/mp4\r\n".getBytes());
+				//output.write("Content-type: application/octet-stream\r\n".getBytes());
+				output.write("Accept-Ranges: bytes\r\n".getBytes());
+				output.write("Server: euserver\r\n".getBytes());
+				output.write("Connection: keep-alive\r\n".getBytes());
+				output.write(("ETag: \"1913579-" + System.currentTimeMillis() + "\"\r\n").getBytes());
+				output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+				output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+				output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n\r\n".getBytes());
+				//
+				int total = 0;
+				int received = 0;
+				long remaining = file.length();
+				//
+				//GZIPOutputStream out = new GZIPOutputStream(output);
+				while(true){
+					//
+					byte[] b = new byte[1024];
+					//
+					received = finput.read(b);
+					System.out.println("total lido: " + received);
+					if (received > 0){
+						output.write(b);
+						output.flush();
+						total += received;
+						if (!second && third) break;
+						//Thread.sleep(500);
+					}
+					System.out.println("total enviado: " + total);
+					//
+					if (remaining - total == 0){
+						break;
+					}
+				}
+				//
+				output.close();
+				socket.shutdownInput();
+				//
+				finput.close();
+				socket.close();
+				//
+				System.out.println("Enviado: " + total);
+			}
+			catch(IOException e){
+				e.printStackTrace();
+				continue;
+			}
+			//
+			
+		}
+		//serverSocket.close();
+	}
+}

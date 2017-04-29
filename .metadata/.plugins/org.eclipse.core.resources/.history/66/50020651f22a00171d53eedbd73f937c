@@ -1,0 +1,28 @@
+package ag.proxyserver.proxy;
+
+import java.io.IOException;
+import java.net.Socket;
+
+import ag.proxyserver.bus.EventBus;
+import ag.proxyserver.bus.WriterListener;
+
+public class ServerSocket implements Runnable, Server {
+	private final Socket socket;
+	private final EventBus bus;
+	
+	private String code = null;
+	
+	public boolean play(){
+		
+	}
+	
+	public int readStream(){
+		WriterListener listener = new WriterListener() {
+			@Override
+			public void write(int stream) throws IOException {
+				socket.getOutputStream().write(stream);
+			}
+		};
+	}
+	
+}

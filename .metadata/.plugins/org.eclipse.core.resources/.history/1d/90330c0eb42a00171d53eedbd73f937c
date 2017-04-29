@@ -1,0 +1,22 @@
+package ag.proxyserver;
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class WebCamCodeRepository {
+	private static final Map<String, Socket> list = new HashMap<>();
+	
+	public static void add(String code, Socket socket){
+		list.put(code, socket);
+	}
+	
+	public static boolean exists(String code){
+		Set<String> codes = list.keySet();
+		for (String c : codes) {
+			if (c.equals(code)) return true;
+		}
+		return false;
+	}
+			
+}

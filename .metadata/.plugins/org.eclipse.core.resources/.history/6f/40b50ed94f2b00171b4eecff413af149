@@ -1,0 +1,12 @@
+package ifpb;
+
+import java.util.Timer;
+
+public class TaskManager {
+	
+	public static void runTask(IReceiver receiver, MessageRepository repository){
+		Timer timer = new Timer();
+		timer.schedule(new SendTask(receiver, repository), 3000, 10000);
+	}
+	
+}

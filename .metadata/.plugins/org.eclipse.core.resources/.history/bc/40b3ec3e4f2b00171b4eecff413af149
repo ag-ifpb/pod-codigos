@@ -1,0 +1,19 @@
+package ifpb;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class TaskManager {
+	
+
+	public static void runTask(Runnable task){
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				task.run();
+			}
+		}, 0, 10000);
+	}
+	
+}

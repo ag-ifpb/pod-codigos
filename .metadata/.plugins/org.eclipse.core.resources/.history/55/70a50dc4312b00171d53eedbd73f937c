@@ -1,0 +1,19 @@
+package ag.proxyserver.proxy.impl;
+
+import ag.proxyserver.proxy.Server;
+
+public class ServerImpl implements Server{
+
+	@Override
+	public boolean play() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int readStream() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

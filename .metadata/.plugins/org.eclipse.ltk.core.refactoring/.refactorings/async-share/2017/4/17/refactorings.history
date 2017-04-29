@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ifpb.ISenderApp&apos; to &apos;IServerApp&apos;&#x0A;- Original project: &apos;async-share&apos;&#x0A;- Original element: &apos;ifpb.ISenderApp&apos;&#x0A;- Renamed element: &apos;ifpb.IServerApp&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ISenderApp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ifpb{ISenderApp.java[ISenderApp" matchStrategy="1" name="IServerApp" qualified="false" references="true" similarDeclarations="false" stamp="1493302962519" textual="false" version="1.0"/>
+</session>

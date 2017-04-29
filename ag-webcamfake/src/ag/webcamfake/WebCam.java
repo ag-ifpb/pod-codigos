@@ -1,0 +1,33 @@
+package ag.webcamfake;
+
+import java.io.FileInputStream;
+
+/**
+ * IWebCam possui as funcionalidades da
+ * webcam como: registrar no servidor proxy,
+ * iniciar a filmagem e encaminhar stream para o proxy.
+ * 
+ * @author arigarcia
+ *
+ */
+public interface WebCam {
+
+	/**
+	 * Inicializar a leitura da webcam.
+	 * 
+	 * @throws WebCamException - disparado caso não consiga iniciar
+	 * o play (erro 3001).
+	 */
+	FileInputStream play() throws WebCamException;
+	
+
+	/**
+	 * Parar de transmitir o stream.
+	 * 
+	 * @throws WebCamException - disparado caso a webcam não 
+	 * esteja ligada (erro 6001) ou caso não consiga encerrar 
+	 * o stream (erro 6002)
+	 */
+	void stop(FileInputStream finput) throws WebCamException;
+	
+}

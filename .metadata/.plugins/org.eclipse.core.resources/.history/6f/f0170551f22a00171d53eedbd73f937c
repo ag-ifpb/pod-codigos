@@ -1,0 +1,50 @@
+package ag.proxyserver.reverse.impl;
+
+import ag.proxyserver.bus.EventBus;
+import ag.proxyserver.bus.ReaderListener;
+import ag.proxyserver.bus.WriterListener;
+import ag.proxyserver.reverse.ReverseServer;
+import ag.proxyserver.tmp.WebCamCodeGenerator;
+import ag.proxyserver.tmp.WebCamCodeRepository;
+import ag.proxyserver.tmp.WebCamException;
+
+public class ReverseServerImpl implements ReverseServer {
+	private final EventBus bus;
+	//
+	private String code = null;
+	
+	public ReverseServerImpl(EventBus bus) {
+		this.bus = bus;
+	}
+
+	@Override
+	public String register(String oldCode) throws WebCamException {
+		//
+		if (oldCode == null){
+			String newCode = WebCamCodeGenerator.code();
+			WebCamCodeRepository.add(newCode);
+			return newCode;
+		}
+		//
+		if (!WebCamCodeRepository.exists(oldCode)){
+			throw new WebCamException(2002, "Código inexistente.");
+		}
+		//
+		return oldCode;
+	}
+
+	@Override
+	public String awaitCommand() throws WebCamException {
+		if (code == null) throw new WebCamException(4000, "Erro ao aguardar o comando. Código inválido.");
+		ReaderListener listener = bus.createReaderListener(code);
+		return listener.read();
+	}
+
+	@Override
+	public void transferStreamToProxy(int byteStream) throws WebCamException {
+		if (code == null) throw new WebCamException(5000, "Erro ao transferir dados do stream. Código inválido.");
+		WriterListener listener = bus.getWriterListener(code);//TODO reduzir o número de consulta ao map
+		listener.write(byteStream);
+	}
+
+}

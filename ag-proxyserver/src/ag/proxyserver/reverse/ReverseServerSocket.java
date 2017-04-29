@@ -1,0 +1,119 @@
+package ag.proxyserver.reverse;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.nio.ByteBuffer;
+
+import ag.proxyserver.Constants;
+import ag.proxyserver.Logger;
+import ag.proxyserver.reverse.impl.ReverseServerImpl;
+import ag.proxyserver.streamer.StreamBinderManager;
+import ag.proxyserver.util.Util;
+
+
+public class ReverseServerSocket extends Thread {
+	final Socket socket;
+	final ReverseServer server;
+	
+	private void responseCode(String newCode) throws IOException{
+		//preparar mensagem
+		String output_msg = newCode + Constants.END_TOKEN;
+		//enviar mensagem
+		socket.getOutputStream().write(output_msg.getBytes());
+		socket.getOutputStream().flush();
+	}
+	
+	//Formato do código: CAM @@@@@@-##, 
+	//onde @ representa [0-9A-Z] e # representa [0-9]
+	//Token: ---END---
+	//Total de 22 caracteres
+	private void register() throws IOException{
+		//log
+		Logger.info("Iniciando o registro de uma câmera.");
+		//ler dados do stream
+		int received = 0;
+		byte[] b = new byte[22];
+		ByteBuffer buffer = ByteBuffer.allocate(22);
+		while(received < b.length){
+			int r = socket.getInputStream().read(b);
+			buffer.put(b, 0, r);
+			received += r;
+		}
+		//extrair o código de registro
+		String input_msg = new String(buffer.array());
+		String oldCode = input_msg.replace(Constants.END_TOKEN, "");
+		//log
+		Logger.info("Número do registro da câmera: " + oldCode);
+		String newCode = null;  
+		try {
+			//processar registro de webcam
+			newCode = server.register(oldCode);
+			responseCode(newCode);
+		}
+		catch(ReverseServerException e){
+			newCode = "CAM 000000-00";
+			responseCode(newCode);
+			throw new IOException(e.getMessage());
+		}
+	}
+	
+	private void awaitCommand() throws ReverseServerException, IOException{
+		//
+		Logger.info("Aguardando comando.");
+		//
+		String command = server.awaitCommand();
+		//
+		Logger.info("Comando recebido: " + command);
+		//preparar mensagem
+		String output_msg = command + Constants.END_TOKEN;
+		//enviar mensagem
+		socket.getOutputStream().write(output_msg.getBytes());
+		socket.getOutputStream().flush();
+	}
+	
+	private void transferStream() throws ReverseServerException, IOException{
+		Logger.info("Transferindo stream");
+		Util.readInputStream(socket.getInputStream(), new Util.Callback() {
+			@Override
+			public void write(int byteStream) {
+				try {
+					server.transferStreamToProxy(byteStream);
+				} catch (ReverseServerException e) {
+					e.printStackTrace();
+					return;
+				}				
+			}
+		});
+	}
+	
+	public ReverseServerSocket(Socket socket, StreamBinderManager manager) {
+		this.socket = socket;
+		this.server = new ReverseServerImpl(manager);
+	}
+	
+	public void run(){
+		try {
+			while(true){
+				//	registrar
+				register();
+				while(true){
+					try {
+						//aguardar comando
+						awaitCommand();
+						//	transfere o stream da web cam
+						transferStream();
+					}
+					catch(IOException e){
+						break;
+					}
+				}
+				//
+				socket.close();
+			}
+		}
+		catch(IOException | ReverseServerException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
+}

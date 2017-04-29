@@ -1,0 +1,20 @@
+package ag.proxyserver.streamer;
+
+public class Stream {
+	byte[] b = new byte[1];
+	
+	public void send(int byteStream){
+		b[0] = (byte) byteStream;
+		synchronized (b) {
+			b.notify();
+		}
+	}
+	
+	public int recv() throws InterruptedException{
+		synchronized (b) {
+			b.wait();
+		}
+		return b[0];
+	}
+	
+}

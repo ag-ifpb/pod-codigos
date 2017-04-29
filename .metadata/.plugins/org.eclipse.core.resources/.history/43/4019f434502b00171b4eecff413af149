@@ -1,0 +1,16 @@
+package ifpb;
+
+public class SenderImpl implements ISender {
+	private final MessageRepository repository;
+	
+	public SenderImpl(MessageRepository rep) {
+		this.repository = rep;
+	}
+
+	@Override
+	public void sendMessage(Message dto) {
+		//armazenar temporariamente a mensagem
+		repository.add(dto);
+	}
+
+}

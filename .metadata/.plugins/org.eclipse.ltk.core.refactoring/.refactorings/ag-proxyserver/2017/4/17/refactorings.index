@@ -1,0 +1,64 @@
+1493221429484	Delete element
+1493221586750	Move compilation unit
+1493221653494	Rename compilation unit 'ProxyServerStub.java'
+1493224741271	Delete elements
+1493224747906	Delete element
+1493233694295	Delete element
+1493233735367	Rename type 'ProxyServer'
+1493233742142	Move compilation unit
+1493233779523	Move compilation unit
+1493233788805	Rename type 'ProxyServerImpl'
+1493233792925	Move compilation unit
+1493233908504	Move compilation unit
+1493233924314	Move compilation unit
+1493234157588	Move compilation unit
+1493234166613	Rename type 'ProxyServerSocket'
+1493234278644	Rename package 'ag.proxyserver.webcam'
+1493234286979	Rename package 'ag.proxyserver.webcam.impl'
+1493234573903	Delete elements
+1493234638455	Rename package 'ag.proxyserver.webcam'
+1493234658737	Move compilation unit
+1493234667113	Move compilation unit
+1493234671700	Move compilation units
+1493234676161	Delete element
+1493234693099	Rename package 'ag.proxyserver.webcam.reverse'
+1493234710136	Rename package 'ag.proxyserver.webcam.proxy'
+1493234725243	Move compilation units
+1493234750338	Rename type 'WebCamProxyServer'
+1493234762724	Rename type 'WebCamProxyServerImpl'
+1493234771658	Rename type 'WebCamProxyServerSocket'
+1493234778289	Delete element
+1493234824795	Move compilation units
+1493234942560	Delete element
+1493258360016	Rename type 'WebCamReverseServer'
+1493258371452	Rename type 'WebCamReverseServerImpl'
+1493258380027	Rename type 'WebCamReverseServerSocket'
+1493260040262	Rename type 'WebCamServer'
+1493261813103	Delete elements
+1493261887869	Rename package 'ag.proxyserver.bus'
+1493262099956	Rename type 'CommandStreamer'
+1493262137376	Rename type 'Streamer'
+1493262345836	Delete element
+1493263417567	Delete element
+1493286483116	Move compilation unit
+1493286490823	Move compilation unit
+1493286496190	Move compilation unit
+1493287218527	Delete element
+1493287226362	Move compilation unit
+1493287235583	Delete element
+1493287248586	Rename type 'WebCamCodeGenerator'
+1493287253321	Move compilation unit
+1493287262342	Rename type 'WebCamCodeRepository'
+1493287267747	Move compilation unit
+1493287309278	Move compilation unit
+1493287323238	Move compilation unit
+1493287334705	Move compilation unit
+1493287340167	Delete element
+1493287361104	Rename type 'WebCamException'
+1493287379365	Delete element
+1493287840100	Rename type 'Server'
+1493287847059	Rename type 'ServerSocket'
+1493287854032	Delete element
+1493309150535	Rename type 'MainTest'
+1493312370094	Rename type 'ServerImpl'
+1493312389940	Move compilation unit

@@ -1,0 +1,42 @@
+package ifpb;
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.List;
+import java.util.TimerTask;
+
+public class SendTask extends TimerTask {
+	private final MessageRepository repository;
+	
+	public SendTask(MessageRepository repository) {
+		this.repository = repository;
+	}
+	
+	@Override
+	public void run() {
+		//
+		try {
+			Registry registry = LocateRegistry.getRegistry(10991);
+			//fazer o lookup
+			IReceiver receiver = (IReceiver) registry.lookup("Receiver");
+			//localizar as mensagens para serem enviadas
+			List<Message> list = repository.list();
+			for(Message m : list){
+				try {
+					receiver.delivery(m);
+					repository.remove(m);
+				}
+				catch(RemoteException e){
+					e.printStackTrace();
+				}
+			}
+		}
+		catch(RemoteException | NotBoundException e){
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

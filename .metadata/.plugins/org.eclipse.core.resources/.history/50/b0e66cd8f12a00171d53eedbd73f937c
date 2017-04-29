@@ -1,0 +1,5 @@
+package ag.proxyserver.bus;
+
+public interface WriterListener {
+	void write(int stream);
+}

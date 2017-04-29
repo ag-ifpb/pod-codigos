@@ -1,0 +1,31 @@
+package ag.proxyserver;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import ag.proxyserver.proxy.ProxyServer;
+import ag.proxyserver.proxy.ProxyServerSocket;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		//
+		ServerSocket serverSocket = new ServerSocket(10998);
+		ServerSocket reverseServerSocket = new ServerSocket(10999);
+		//
+		Thread tServerSocket = new Thread(){
+			public void run() {
+				while(true){
+					Socket socket = serverSocket.accept();
+					ProxyServerSocket proxyServerSocket = new ProxyServerSocket(socket);
+					proxyServerSocket.s
+				}
+			};
+		}
+		//for server
+		while(true){
+			serv
+		}
+	}
+
+}

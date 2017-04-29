@@ -1,0 +1,109 @@
+package ag.proxyserver.reverse.impl;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+
+import ag.proxyserver.Constants;
+import ag.proxyserver.ProxyServerException;
+import ag.proxyserver.WebCamException;
+import ag.proxyserver.reverse.WebCamProxyServer;
+
+
+public class WebCamProxyServerSocket implements Runnable {
+	final Socket socket;
+	final WebCamProxyServer server;
+	
+	//Formato do código: CAM @@@@@@-##, 
+	//onde @ representa [0-9A-Z] e # representa [0-9]
+	//Token: ---END---
+	//Total de 22 caracteres
+	private void register() throws IOException, WebCamException{
+		//ler dados do stream
+		int received = 0;
+		byte[] b = new byte[22];
+		ByteBuffer buffer = ByteBuffer.allocate(22);
+		while(received < b.length){
+			int r = socket.getInputStream().read(b);
+			buffer.put(b, 0, r);
+			received += r;
+		}
+		//extrair o código de registro
+		String input_msg = new String(buffer.array());
+		String oldCode = input_msg.replace(Constants.END_TOKEN, "");
+		//processar registro de webcam
+		String newCode = server.register(oldCode);
+		//preparar mensagem
+		String output_msg = newCode + Constants.END_TOKEN;
+		//enviar mensagem
+		socket.getOutputStream().write(output_msg.getBytes());
+		socket.getOutputStream().flush();
+	}
+	
+	private void awaitCommand() throws WebCamException, IOException{
+		String command = server.awaitCommand();
+		//preparar mensagem
+		String output_msg = command + Constants.END_TOKEN;
+		//enviar mensagem
+		socket.getOutputStream().write(output_msg.getBytes());
+		socket.getOutputStream().flush();
+	}
+	
+	private void transferStream() throws WebCamException, IOException{
+		//ler dados do stream
+		//int received = 0;
+		boolean eof = false;
+		ByteArrayOutputStream bufferFull = new ByteArrayOutputStream();
+		do {
+			//read stream
+			int nextByte = socket.getInputStream().read();
+			bufferFull.write(nextByte);
+			//received++;
+			//check if ended
+			byte[] data = bufferFull.toByteArray();
+			byte[] last = Arrays.copyOfRange(
+					data, data.length - 13, data.length
+			);
+			String tmp = new String(last);
+			if (Constants.END_TOKEN.equals(tmp)){
+				break;
+			}
+			//
+			server.transferStreamToProxy(nextByte);
+		} while(!eof);
+	}
+	
+	public WebCamProxyServerSocket(Socket socket) {
+		this.server = new WebCamProxyServerImpl();
+		this.socket = socket;
+	}
+	
+	public void run(){
+		try {
+			while(true){
+				socket.setKeepAlive(true);
+				//	registrar
+				register();
+				while(true){
+					try {
+						//aguardar comando
+						awaitCommand();
+						//	transfere o stream da web cam
+						transferStream();
+					}
+					catch(IOException e){
+						break;
+					}
+				}
+				//
+				socket.close();
+			}
+		}
+		catch(IOException | WebCamException e){
+			throw new ProxyServerException();
+		}
+	}
+	
+}

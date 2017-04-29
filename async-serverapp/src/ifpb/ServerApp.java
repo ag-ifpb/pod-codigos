@@ -1,0 +1,19 @@
+package ifpb;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+@SuppressWarnings("serial")
+public class ServerApp extends UnicastRemoteObject implements IServerApp {
+
+	protected ServerApp() throws RemoteException {
+		super();
+	}
+
+	@Override
+	public void print(Message msg) throws RemoteException {
+		System.out.println(msg.getId() + " " + msg.getText());
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;preview-app-iphone.mp4&apos; to &apos;ag-webcamfake&apos;&#x0A;- Original project: &apos;ag-videostream&apos;&#x0A;- Destination element: &apos;ag-webcamfake&apos;&#x0A;- Original element: &apos;preview-app-iphone.mp4&apos;" description="Copy file" destination="=ag-webcamfake" element1="preview-app-iphone.mp4" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1490899910027" units="0" version="1.0"/>
+</session>

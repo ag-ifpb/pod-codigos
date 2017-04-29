@@ -1,0 +1,7 @@
+package ag.proxyserver.bus;
+
+import java.io.IOException;
+
+public interface WriterListener {
+	void write(int stream) throws IOException;
+}

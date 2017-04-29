@@ -1,0 +1,7 @@
+package ifpb;
+
+public interface ISender {
+
+	void sendMessage(Message dto);
+	
+}

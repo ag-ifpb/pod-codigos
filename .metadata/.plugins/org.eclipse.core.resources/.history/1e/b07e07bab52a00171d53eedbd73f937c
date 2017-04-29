@@ -1,0 +1,40 @@
+package ag.proxyserver;
+
+import java.net.Socket;
+
+import ag.proxyserver.proxy.WebCamProxyServer;
+import ag.proxyserver.proxy.impl.WebCamProxyServerImpl;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		//
+		WebCamProxyServer proxyServer = new WebCamProxyServerImpl();
+		//
+//		ConnectionManager manager = new ConnectionManager();
+//		manager.startServer();
+//		//
+//		while(true){
+//			//aguardar uma conexao
+//			Socket socket = manager.connecting();
+//			//
+//			WebCam cam;
+//			//
+//			cam.play();
+//			//
+//			
+//			//uma vez conectado
+//			byte[] b = new byte[19];
+//			socket.getInputStream().read(b);
+//			String oldCode = new String(b);
+//			//registrar a webcam
+//			proxyServer.register(oldCode);
+//			//aguardar um comando
+//			String command = proxyServer.awaitCommand();
+//			//enviar o comand
+//			 
+//			
+//		}
+	}
+
+}

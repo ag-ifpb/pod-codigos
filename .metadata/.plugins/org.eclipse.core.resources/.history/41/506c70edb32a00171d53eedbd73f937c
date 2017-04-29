@@ -1,0 +1,45 @@
+package ag.proxyserver.webcam;
+
+import java.io.InputStream;
+
+import ag.proxyserver.Commander;
+import ag.proxyserver.PlayCallback;
+import ag.proxyserver.WebCamCodeGenerator;
+import ag.proxyserver.WebCamCodeRepository;
+import ag.proxyserver.WebCamException;
+import ag.proxyserver.webcam.WebCamProxyServer;
+
+public class WebCamProxyServerImpl implements WebCamProxyServer {
+	private final Commander commander;
+	private final PlayCallback playCallback;
+
+	@Override
+	public String register(String oldCode) throws WebCamException {
+		//
+		if (oldCode == null){
+			String newCode = WebCamCodeGenerator.code();
+			WebCamCodeRepository.add(newCode);
+			return newCode;
+		}
+		//
+		if (!WebCamCodeRepository.exists(oldCode)){
+			throw new WebCamException(2002, "Código inexistente.");
+		}
+		//
+		return oldCode;
+	}
+
+	@Override
+	public String awaitCommand() throws WebCamException {
+		//
+		
+		//criar um server
+		return commander.command();
+	}
+
+	@Override
+	public void transferStreamToProxy(int byteStream) throws WebCamException {
+		playCallback.callback(byteStream);
+	}
+
+}

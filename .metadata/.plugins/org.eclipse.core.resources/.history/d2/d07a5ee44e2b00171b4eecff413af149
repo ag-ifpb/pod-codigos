@@ -1,0 +1,5 @@
+package ifpb;
+
+public interface IReceiver {
+	void delivery(Message msg);
+}

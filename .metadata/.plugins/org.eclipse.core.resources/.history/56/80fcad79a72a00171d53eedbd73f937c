@@ -1,0 +1,9 @@
+package ag.proxyserver;
+
+@SuppressWarnings("serial")
+public class ProxyServerException extends Exception {
+
+	public ProxyServerException() {
+		super();
+	}
+}

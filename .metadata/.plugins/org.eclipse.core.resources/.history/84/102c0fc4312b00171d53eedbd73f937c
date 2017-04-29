@@ -1,0 +1,54 @@
+package ag.proxyserver.proxy;
+
+import java.io.IOException;
+import java.net.Socket;
+
+import ag.proxyserver.Constants;
+import ag.proxyserver.proxy.impl.ServerImpl;
+import ag.proxyserver.util.Util;
+
+public class ServerSocket implements Runnable {
+	private final Socket socket;
+	private final Server server;
+	
+	private String code = null;
+	
+	public ServerSocket(Socket socket) {
+		this.socket = socket;
+		this.server = new ServerImpl();
+	}
+	
+	public void play() throws IOException{
+		//ler o stream do controller
+		String imsg = Util.readInputStream(socket.getInputStream());
+		//identificar o comando (PLAY)
+		String cmd = imsg.replace(Constants.END_TOKEN, "");
+		//acionar o comando do server server
+		boolean ok = false;
+		if (!"PLAY".equals(cmd)) ok = false;
+		else ok = server.play();
+		//enviar um OK ou ERROR
+		String omsg = (ok ? "OK" : "ERROR") + Constants.END_TOKEN;
+		socket.getOutputStream().write(omsg.getBytes());
+		socket.getOutputStream().flush();
+	}
+	
+	public void readStream() throws IOException{
+		int b = server.readStream();
+		socket.getOutputStream().write(b);
+	}
+
+	@Override
+	public void run() {
+		try {
+			play();
+			while(true){
+				readStream();
+			}
+		}
+		catch(IOException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
+}

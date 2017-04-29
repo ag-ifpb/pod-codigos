@@ -1,0 +1,74 @@
+package ag.proxyserver;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import ag.proxyserver.proxy.ProxyServerSocket;
+import ag.proxyserver.reverse.ReverseServerSocket;
+import ag.proxyserver.streamer.StreamBinderManager;
+
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
+		//instanciar os servidores
+		ServerSocket serverSocket = new ServerSocket(10998);
+		ServerSocket reverseServerSocket = new ServerSocket(10999);
+		//
+		StreamBinderManager manager = new StreamBinderManager();
+		//proxy
+		Thread tProxyServerSocket = new Thread(){
+			public void run() {
+				while(true){
+					Socket socket = null;
+					try {
+						socket = serverSocket.accept();
+						ProxyServerSocket proxyServerSocket = new ProxyServerSocket(socket, manager);
+						proxyServerSocket.start();
+					}
+					catch(IOException e){
+						e.printStackTrace();
+					}
+					finally {
+						if (socket != null){
+							try {
+								socket.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			};
+		};
+		//for server
+		//reverse
+		Thread tReverseServerSocket = new Thread(){
+			public void run() {
+				while(true){
+					Socket socket = null;
+					try {
+						socket = serverSocket.accept();
+						ReverseServerSocket reverseServerSocket = new ReverseServerSocket(socket, manager);
+						reverseServerSocket.start();
+					}
+					catch(IOException e){
+						e.printStackTrace();
+					}
+					finally {
+						if (socket != null){
+							try {
+								socket.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			};
+		};
+		//
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package ag.proxyserver.reverse;
+
+@SuppressWarnings("serial")
+public class ProxyServerException extends RuntimeException {
+
+	public ProxyServerException() {
+		super();
+	}
+}

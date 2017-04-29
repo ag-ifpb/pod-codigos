@@ -1,0 +1,5 @@
+package ag.proxyserver;
+
+public interface PlayCallback {
+	void callback(int byteStream);
+}

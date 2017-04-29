@@ -1,0 +1,23 @@
+package ifpb;
+
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+
+public class Receiver extends UnicastRemoteObject implements IReceiver {
+
+	protected Receiver() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void delivery(Message msg) throws RemoteException {
+		Registry registry =  LocateRegistry.getRegistry(10992);
+		IServerApp serverApp = (IServerApp) registry.lookup("ServerApp");
+		
+	}
+
+	
+}

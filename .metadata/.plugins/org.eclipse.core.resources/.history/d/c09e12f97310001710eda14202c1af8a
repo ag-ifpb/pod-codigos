@@ -1,0 +1,168 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class StreamServer {
+	
+	private static int result206(Socket socket, FileInputStream finput, int offset, int endset, int length) throws IOException{
+		//
+		String contentRange = new StringBuffer()
+				.append("Content-Range:bytes ")
+				.append(offset)
+				.append("-")
+				.append(endset)
+				.append("/")
+				.append(length)
+				.toString();
+		//
+		OutputStream output = socket.getOutputStream();
+		output.write("HTTP/1.1 206 Partial Content\r\n".getBytes());
+		output.write((contentRange + "\r\n").getBytes());
+		output.write(("Content-Length: "+ (endset - offset) + "\r\n").getBytes());
+		output.write("Content-Type: video/mp4\r\n".getBytes());
+		output.write("Accept-Ranges: bytes\r\n".getBytes());
+		output.write("Server: euserver\r\n".getBytes());
+		output.write("Connection: keep-alive\r\n".getBytes());
+		output.write(("ETag: \"1913579-" + System.currentTimeMillis() + "\"\r\n").getBytes());
+		output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+		output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+		output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n\r\n".getBytes());
+		//
+		int totalReceived = 0;
+		int partialReceived = 0;
+		long remaining = endset - offset;
+		//
+		int bsize = (remaining < 1024? (int) remaining : 1024);
+		byte[] b = new byte[bsize];
+		//
+		finput.skip(offset);
+		while(true){
+			//
+			//System.out.println(totalReceived + " " + remaining);
+			//
+			partialReceived = finput.read(b, 0, bsize);
+			//
+			if (partialReceived > 0){
+				output.write(b);
+				output.flush();
+				totalReceived += partialReceived;
+			}
+			//
+			if (remaining - totalReceived == 0){
+				break;
+			}
+		}
+		//
+		output.close();
+		//
+		return totalReceived;
+	}
+	
+	private static int result200(Socket socket, FileInputStream finput, int offset, int length) throws IOException{
+		OutputStream output = socket.getOutputStream();
+		output.write("HTTP/1.1 200 OK\r\n".getBytes());
+		output.write(("Content-Length: "+ length + "\r\n").getBytes());
+		output.write("Content-Type: video/mp4\r\n".getBytes());
+		output.write("Accept-Ranges: bytes\r\n".getBytes());
+		output.write("Server: euserver\r\n".getBytes());
+		output.write("Connection: keep-alive\r\n".getBytes());
+		output.write(("ETag: \"1913579-" + System.currentTimeMillis() + "\"\r\n").getBytes());
+		output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+		output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+		output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n\r\n".getBytes());
+		//
+		int totalReceived = 0;
+		int partialReceived = 0;
+		long remaining = length - offset;
+		//
+		byte[] b = new byte[1024];
+		//
+		finput.skip(offset);
+		while(true){
+			//
+			//System.out.println(totalReceived + " " + remaining);
+			//
+			partialReceived = finput.read(b, 0, 1024);
+			//
+			if (partialReceived > 0){
+				output.write(b);
+				output.flush();
+				totalReceived += partialReceived;
+			}
+			//
+			if (remaining - totalReceived == 0){
+				break;
+			}
+		}
+		//
+		return totalReceived;
+	}
+	
+	private static int requestResolver(Socket socket, FileInputStream finput, long fsize) throws IOException{
+		InputStreamReader reader = new InputStreamReader(socket.getInputStream());
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		while(true){
+			String line = bufferedReader.readLine();
+			System.out.println(line);
+			if (line.contains("Upgrade-Insecure-Requests: 1")){
+				return result200(socket, finput, 0, (int) fsize);
+			}
+			else if (line.contains("Range: bytes=")){
+				String range = line.replace("Range: bytes=", "");
+				String[] ranges = range.split("-");
+				if (ranges.length > 1){
+					int offset = Integer.parseInt(ranges[0]);
+					int endset = Integer.parseInt(ranges[1]);
+					return result206(socket, finput, offset, endset, (int) fsize);
+				}
+				else {
+					int offset = Integer.parseInt(ranges[0]);
+					int endset = (int) fsize;
+					return result206(socket, finput, offset, endset, (int) fsize);
+				}
+			}
+			else if (line.isEmpty()){
+				return result200(socket, finput, 0, (int) fsize);
+			}
+		}
+	}
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		//
+		ServerSocket serverSocket = new ServerSocket(10999);
+		//
+		while(true){
+			//
+			Socket socket = null;
+			FileInputStream finput = null;
+			try {
+				//
+				socket = serverSocket.accept();
+				//1st part
+				File file = new File("preview-app-iphone.mp4");
+				finput = new FileInputStream(file);
+				//
+				int total = requestResolver(socket, finput, file.length());
+				//
+				System.out.println("Enviado: " + total);
+			}
+			catch(IOException e){
+				e.printStackTrace();
+				continue;
+			}
+			finally {
+				System.out.println("Closed connection.");
+				if (socket != null) socket.close();
+				if (finput != null) finput.close();
+			}
+		}
+		//serverSocket.close();
+	}
+}

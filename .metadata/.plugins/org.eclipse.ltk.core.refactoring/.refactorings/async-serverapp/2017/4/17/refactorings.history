@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;async-receiver/src/ifpb&apos;&#x0A;- Original project: &apos;async-serverapp&apos;&#x0A;- Destination element: &apos;async-receiver/src/ifpb&apos;&#x0A;- Original elements:&#x0A;     ifpb.Main.java&#x0A;     ifpb.Receiver.java&#x0A;- Update references to refactored element" description="Move compilation units" destination="=async-receiver/src&lt;ifpb" element1="/src&lt;ifpb{Main.java" element2="/src&lt;ifpb{Receiver.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1493303264226" units="2" version="1.0"/>
+</session>

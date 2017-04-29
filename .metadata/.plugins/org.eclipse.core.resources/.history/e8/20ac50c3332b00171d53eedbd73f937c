@@ -1,0 +1,41 @@
+package ag.proxyserver;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import ag.proxyserver.proxy.ProxyServerSocket;
+import ag.proxyserver.reverse.ReverseServerSocket;
+import ag.proxyserver.streamer.StreamBinderManager;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		//instanciar os servidores
+		ServerSocket serverSocket = new ServerSocket(10998);
+		ServerSocket reverseServerSocket = new ServerSocket(10999);
+		//
+		StreamBinderManager manager = new StreamBinderManager();
+		//proxy
+		Thread tProxyServerSocket = new Thread(){
+			public void run() {
+				while(true){
+					Socket socket = serverSocket.accept();
+					ProxyServerSocket proxyServerSocket = new ProxyServerSocket(socket, manager);
+					proxyServerSocket.start();
+				}
+			};
+		};
+		//for server
+		//reverse
+		Thread tReverseServerSocket = new Thread(){
+			public void run() {
+				while(true){
+					Socket socket = serverSocket.accept();
+					ReverseServerSocket reverseServerSocket = new ReverseServerSocket(socket, manager);
+					reverseServerSocket.start();
+				}
+			};
+		}
+	}
+
+}

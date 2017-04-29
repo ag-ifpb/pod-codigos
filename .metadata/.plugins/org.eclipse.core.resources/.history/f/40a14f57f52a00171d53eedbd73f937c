@@ -1,0 +1,29 @@
+package ag.proxyserver.proxy;
+
+import java.io.IOException;
+import java.net.Socket;
+
+import ag.proxyserver.bus.EventBus;
+import ag.proxyserver.bus.ReaderListener;
+import ag.proxyserver.bus.WriterListener;
+
+public class ServerSocket implements Runnable {
+	private final Socket socket;
+	private final EventBus bus;
+	private final Server server;
+	
+	private String code = null;
+	
+	public boolean play(){
+		ReaderListener listener = bus.getReaderListener(code);
+		listener.read();
+	}
+	
+	public void readStream(){
+		WriterListener l = bus.getWriterListener(code);
+		byte[] b = new byte[1];
+		l.registry(b);
+		return b[0];
+	}
+	
+}

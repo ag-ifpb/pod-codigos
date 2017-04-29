@@ -1,0 +1,94 @@
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Base64;
+
+public class StreamServer {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		//
+		ServerSocket serverSocket = new ServerSocket(10999);
+		//
+		boolean first = true;
+		//
+		while(true){
+			//
+			try {
+				//
+				Socket socket = serverSocket.accept();
+				//1st part
+				File file = new File("preview-app-iphone.mp4");
+				FileInputStream finput = new FileInputStream(file);
+				BufferedInputStream input = new BufferedInputStream(socket.getInputStream());
+				input.read();//tratamento http
+				//
+				//BufferedOutputStream output = new BufferedOutputStream(socket.getOutputStream());
+				OutputStream output = socket.getOutputStream();
+				if (first){
+					output.write("HTTP/1.1 200 OK\r\n".getBytes());
+					output.write(("Content-length: "+ file.length() + "\r\n\r\n").getBytes());
+					first = false;
+				}
+				else {
+					output.write("HTTP/1.1 206 Partial Content\r\n".getBytes());
+					output.write("Content-Range:bytes 0-1913578/1913579\r\n".getBytes());
+				}
+				output.write("Content-type: video/mp4\r\n".getBytes());
+				//output.write("Content-type: application/octet-stream\r\n".getBytes());
+				output.write("Accept-ranges: bytes\r\n".getBytes());
+				output.write("Server: euserver\r\n".getBytes());
+				output.write("Connection: keep-alive\r\n".getBytes());
+				output.write("ETag: \"1913579-1487659878000\"\r\n".getBytes());
+				output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+				output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+				output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n".getBytes());
+				output.write(Base64.getDecoder().decode("AAA=".getBytes()));
+				//
+				int total = 0;
+				int received = 0;
+				long remaining = file.length();
+				//
+				while(true){
+					//
+					byte[] b = new byte[1024];
+					//
+					received = finput.read(b);
+					System.out.println("total lido: " + received);
+					if (received > 0){
+						output.write(b);
+						output.flush();
+						total += received;
+						//Thread.sleep(500);
+					}
+					System.out.println("total enviado: " + total);
+					//
+					if (remaining - total == 0){
+						break;
+					}
+				}
+				//
+				output.write(Base64.getDecoder().decode("AAA=".getBytes()));
+				//
+				input.close();
+				output.close();
+				//
+				finput.close();
+				//
+				socket.close();
+				//
+				System.out.println("Enviado: " + total);
+			}
+			catch(IOException e){
+				e.printStackTrace();
+				continue;
+			}
+			//
+			
+		}
+		//serverSocket.close();
+	}
+}

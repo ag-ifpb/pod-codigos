@@ -1,0 +1,11 @@
+package ifpb;
+
+public class SenderImpl implements ISender {
+
+	@Override
+	public void sendMessage(Message dto) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

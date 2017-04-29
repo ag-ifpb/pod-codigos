@@ -1,0 +1,45 @@
+package ag.proxyserver.util;
+
+import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
+
+import ag.proxyserver.streamer.Stream;
+import ag.proxyserver.tmp.Constants;
+
+public class Util {
+
+	public String readInputStream(Stream stream){
+		//
+		boolean eof = false;
+		ByteArrayOutputStream bufferFull = new ByteArrayOutputStream();
+		//
+		try {
+			do {
+				//read stream
+				int nextByte = stream.recv();
+				bufferFull.write(nextByte);
+				//received++;
+				//check if ended
+				byte[] data = bufferFull.toByteArray();
+				byte[] last = Arrays.copyOfRange(
+						data, data.length - 13, data.length
+				);
+				String tmp = new String(last);
+				if (Constants.END_TOKEN.equals(tmp)){
+					eof = true;
+				}
+				//
+			} while(!eof);
+			//
+			byte[] data = bufferFull.toByteArray();
+			byte[] comm = Arrays.copyOfRange(
+					data, 0, data.length - 13
+			);
+			//
+			return new String(comm);
+		}
+		catch (InterruptedException e) {
+			return null;
+		}
+	}
+}

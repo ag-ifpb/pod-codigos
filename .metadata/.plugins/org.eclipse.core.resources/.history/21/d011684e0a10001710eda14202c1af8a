@@ -1,0 +1,72 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class StreamServer {
+
+	public static void main(String[] args) throws IOException {
+		ServerSocket serverSocket = new ServerSocket(10999);
+		while(true){
+			//
+			Socket socket = serverSocket.accept();
+			//
+			File file = new File("preview-app-iphone.mp4");
+			FileInputStream finput = new FileInputStream(file);
+			BufferedInputStream input = new BufferedInputStream(socket.getInputStream());
+			input.read();//tratamento http
+			//
+			BufferedOutputStream output = new BufferedOutputStream(socket.getOutputStream());
+			output.write("HTTP/1.1 200 OK\r\n".getBytes());
+			output.write("Content-type: video/mp4\r\n".getBytes());
+			output.write("Accept-ranges: bytes\r\n".getBytes());
+			output.write("Server: euserver\r\n".getBytes());
+			output.write("Connection: keep-alive\r\n".getBytes());
+			output.write("ETag: \"1913579-1487659878000\"\r\n".getBytes());
+			output.write("Date: Thu, 23 Mar 2017 20:13:25 GMT\r\n".getBytes());
+			output.write("Cache-Control: public, max-age=0\r\n".getBytes());
+			output.write("Last-Modified: Tue, 21 Feb 2017 06:51:18 GMT\r\n".getBytes());
+			output.write(("Content-length: "+ file.length() + "\r\n\r\n").getBytes());
+			//
+			int total = 0;
+			int received = 0;
+			long remaining = file.length();
+			//
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			while(true){
+				//
+				byte[] b = new byte[1024];
+				//
+				received = finput.read(b);
+				if (received > 0){
+					out.write(b, 0, received);
+					total += received;
+				}
+				//
+				if (remaining - total == 0){
+					break;
+				}
+			}
+			//
+			int c = 0;
+			byte[] o = out.toByteArray();
+			while(true){
+				output.write(o, 0, 1024);
+				c += 1024;
+			}
+			//output.write("\r\n".getBytes());
+			//
+			//input.close();
+			//output.close();
+			//
+			//socket.close();
+			//
+			System.out.println("Enviado: " + total);
+		}
+		//serverSocket.close();
+	}
+}

@@ -1,0 +1,25 @@
+package ag.proxyserver.bus;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class EventBus {
+	private Map<String, Object> list = new HashMap<>();
+	
+	public ReaderListener createReaderListener(String code){
+		
+	}
+	
+	public WriterListener createWriterListener(String code){
+		
+	}
+	
+	public ReaderListener getReaderListener(String code){
+		return (ReaderListener) list.get(code);
+	}
+	
+	public WriterListener getWriterListener(String code){
+		return (WriterListener) list.get(code);
+	} 
+}

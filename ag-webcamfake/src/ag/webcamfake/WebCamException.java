@@ -1,0 +1,10 @@
+package ag.webcamfake;
+
+@SuppressWarnings("serial")
+public class WebCamException extends Exception{
+
+	public WebCamException(int errorCode, String msg) {
+		super(msg + " (code: " + errorCode + ")");
+	}
+	
+}

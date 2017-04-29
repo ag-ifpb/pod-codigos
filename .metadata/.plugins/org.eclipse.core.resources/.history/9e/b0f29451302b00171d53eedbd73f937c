@@ -1,0 +1,5 @@
+package ag.proxyserver.tmp;
+
+public interface Commander {
+	void play(PlayCallback callback);
+}

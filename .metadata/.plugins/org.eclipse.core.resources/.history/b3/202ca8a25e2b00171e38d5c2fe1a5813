@@ -1,0 +1,30 @@
+package ag.proxyserver;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import org.junit.Test;
+
+public class MainTest {
+
+	@Test
+	public void test() throws UnknownHostException, IOException {
+		//
+		System.out.println("Iniciando o teste");
+		Socket socket = new Socket("127.0.0.1", 10999);
+		System.out.println("Conectado ao servidor");
+		//enviando código antigo
+		socket.getOutputStream().write(
+				("CAM 000000-00" + Constants.END_TOKEN).getBytes()
+		);
+		socket.
+		//recebendo o novo
+		byte[] b = new byte[22];
+		socket.getInputStream().read(b);
+		System.out.println(new String(b));
+		//
+		socket.close();
+	}
+
+}

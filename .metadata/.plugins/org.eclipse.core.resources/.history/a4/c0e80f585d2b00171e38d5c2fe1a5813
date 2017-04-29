@@ -1,0 +1,30 @@
+package ag.proxyserver;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import org.junit.Test;
+
+public class MainTest {
+	
+	private static void testClientRegistry(Socket socket) throws IOException{
+		byte[] b = new byte[22];
+		socket.getInputStream().read(b);
+		System.out.println(new String(b));
+	}
+	
+	private static void testClient() throws UnknownHostException, IOException{
+		//
+		System.out.println(System.currentTimeMillis());
+		Socket socket = new Socket("127.0.0.1", 10999);
+		//
+		testClientRegistry(socket);
+	}
+
+	@Test
+	public void test() throws UnknownHostException, IOException {
+		testClient();
+	}
+
+}
