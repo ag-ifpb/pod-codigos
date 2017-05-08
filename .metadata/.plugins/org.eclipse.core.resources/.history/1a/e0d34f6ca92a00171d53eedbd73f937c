@@ -1,5 +1,0 @@
-package ag.proxyserver;
-
-public interface Commander {
-	void play();
-}

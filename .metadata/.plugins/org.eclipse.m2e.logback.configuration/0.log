@@ -281,3 +281,155 @@ Caused by: java.lang.NullPointerException: null
 2017-02-28 19:15:55,429 [Worker-177] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-02-28 19:15:55,430 [Worker-177] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag.pod.helloworld/src/test/resources
 2017-03-09 07:37:13,296 [Takari usage stats reporter] INFO  i.t.s.m.i.UsageStatsActivator - Reporting usage stats url=https://stats.takari.io/stats, body={"java.version":"1.8.0_91","java.vendor":"Oracle Corporation","os.name":"Mac OS X","os.arch":"x86_64","os.version":"10.10.5","eclipse.product":"org.eclipse.epp.package.jee.product","eclipse.buildId":"4.5.2.M20160212-1500","projectCount":1,"bundles":[{"symbolicName":"org.eclipse.osgi","version":"3.10.102.v20160118-1700"},{"symbolicName":"io.takari.stats.m2e","version":"0.1.0.201506181201"},{"symbolicName":"org.eclipse.m2e.core","version":"1.7.0.20160603-1933"}],"mavenPlugins":{"org.apache.maven.plugins:maven-assembly-plugin:3.0.0:single":[],"org.apache.maven.plugins:maven-clean-plugin:2.5:clean":[],"org.apache.maven.plugins:maven-compiler-plugin:3.1:compile":["configurator"],"org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile":["configurator"],"org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy":[],"org.apache.maven.plugins:maven-install-plugin:2.4:install":[],"org.apache.maven.plugins:maven-jar-plugin:2.4:jar":["configurator"],"org.apache.maven.plugins:maven-resources-plugin:2.6:resources":["execute"],"org.apache.maven.plugins:maven-resources-plugin:2.6:testResources":["execute"],"org.apache.maven.plugins:maven-site-plugin:3.3:site":[],"org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test":[]}}
+2017-05-05 10:54:38,934 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-clientapp:async-clientapp:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/pom.xml.
+2017-05-05 10:54:39,916 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 10:54:39,921 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 10:54:39,923 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 10:54:39,924 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 10:54:39,953 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-clientapp/src
+2017-05-05 10:54:39,955 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-clientapp/src/test/java because it overlaps with /async-clientapp/src
+2017-05-05 10:54:40,087 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-05 10:54:40,438 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-clientapp:async-clientapp:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/pom.xml.
+2017-05-05 10:54:40,627 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-clientapp/src
+2017-05-05 10:54:40,629 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-clientapp/src/test/java because it overlaps with /async-clientapp/src
+2017-05-05 10:54:40,680 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-05-05 10:54:40,989 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 10:54:40,990 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 10:54:40,993 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 10:54:40,994 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:20:58,668 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:20:58,669 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:20:58,670 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:20:58,671 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:21:06,462 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:21:06,462 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:21:06,463 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:21:06,464 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:21:35,327 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:21:35,327 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:21:35,328 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:21:35,329 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:23:00,366 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:23:00,369 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:23:00,371 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:23:00,372 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:27:56,220 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:27:56,221 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:27:56,223 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:27:56,223 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:28:33,250 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:28:33,250 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:28:33,252 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:28:33,253 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 11:29:44,518 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:29:44,519 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 11:29:44,522 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 11:29:44,522 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:08:37,665 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:08:37,667 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:08:37,668 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:08:37,669 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:09:01,504 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:09:01,504 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:09:01,506 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:09:01,506 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:12:42,655 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:12:42,659 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:12:42,660 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:12:42,661 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:22:05,920 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:22:05,922 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:22:05,922 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:22:05,923 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:37:02,030 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:37:02,032 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:37:02,034 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:37:02,035 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:41:14,227 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:41:14,228 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:41:14,229 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:41:14,229 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:43:32,507 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:43:32,507 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:43:32,509 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:43:32,510 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:44:19,919 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:44:19,919 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:44:19,922 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:44:19,923 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 12:46:48,708 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:46:48,709 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 12:46:48,710 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 12:46:48,711 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-05 20:36:21,363 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 20:36:21,365 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-05 20:36:21,366 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-05 20:36:21,367 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources
+2017-05-08 08:24:43,076 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-receiver:async-receiver:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/pom.xml.
+2017-05-08 08:24:44,754 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-receiver/src
+2017-05-08 08:24:44,756 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-receiver/src/test/java because it overlaps with /async-receiver/src
+2017-05-08 08:24:44,862 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-08 08:24:45,225 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-receiver:async-receiver:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/pom.xml.
+2017-05-08 08:24:45,607 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:45,615 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/main/resources
+2017-05-08 08:24:45,619 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:45,620 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/test/resources
+2017-05-08 08:24:45,828 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-receiver/src
+2017-05-08 08:24:45,831 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-receiver/src/test/java because it overlaps with /async-receiver/src
+2017-05-08 08:24:45,903 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-08 08:24:46,061 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:46,063 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/main/resources
+2017-05-08 08:24:46,064 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:46,065 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/test/resources
+2017-05-08 08:24:54,943 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-sender:async-sender:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/pom.xml.
+2017-05-08 08:24:55,104 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-sender/src
+2017-05-08 08:24:55,105 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-sender/src/test/java because it overlaps with /async-sender/src
+2017-05-08 08:24:55,205 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-08 08:24:55,245 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-sender:async-sender:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/pom.xml.
+2017-05-08 08:24:55,354 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-sender/src
+2017-05-08 08:24:55,355 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-sender/src/test/java because it overlaps with /async-sender/src
+2017-05-08 08:24:55,398 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-05-08 08:24:55,648 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:55,649 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/src/main/resources
+2017-05-08 08:24:55,651 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:24:55,652 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/src/test/resources
+2017-05-08 08:25:05,891 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-serverapp:async-serverapp:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/pom.xml.
+2017-05-08 08:25:06,035 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-serverapp/src
+2017-05-08 08:25:06,035 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-serverapp/src/test/java because it overlaps with /async-serverapp/src
+2017-05-08 08:25:06,089 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-08 08:25:06,115 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-serverapp:async-serverapp:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/pom.xml.
+2017-05-08 08:25:06,236 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-serverapp/src
+2017-05-08 08:25:06,236 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-serverapp/src/test/java because it overlaps with /async-serverapp/src
+2017-05-08 08:25:06,308 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-05-08 08:25:06,448 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:06,449 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/src/main/resources
+2017-05-08 08:25:06,450 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:06,451 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/src/test/resources
+2017-05-08 08:25:14,606 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-share:async-share:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-share/pom.xml.
+2017-05-08 08:25:14,821 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-share/src
+2017-05-08 08:25:14,822 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-share/src/test/java because it overlaps with /async-share/src
+2017-05-08 08:25:14,912 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-08 08:25:14,948 [Worker-20] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: async-share:async-share:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-share/pom.xml.
+2017-05-08 08:25:15,048 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /async-share/src
+2017-05-08 08:25:15,049 [Worker-20] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /async-share/src/test/java because it overlaps with /async-share/src
+2017-05-08 08:25:15,133 [Worker-20] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-05-08 08:25:15,267 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,268 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-share/src/main/resources
+2017-05-08 08:25:15,269 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,270 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-share/src/test/resources
+2017-05-08 08:25:15,566 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,566 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/src/main/resources
+2017-05-08 08:25:15,567 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,568 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-serverapp/src/test/resources
+2017-05-08 08:25:15,668 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,670 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/src/main/resources
+2017-05-08 08:25:15,671 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,672 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-sender/src/test/resources
+2017-05-08 08:25:15,723 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,724 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/main/resources
+2017-05-08 08:25:15,727 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,730 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-receiver/src/test/resources
+2017-05-08 08:25:15,925 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,926 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/main/resources
+2017-05-08 08:25:15,928 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-08 08:25:15,929 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/async-clientapp/src/test/resources

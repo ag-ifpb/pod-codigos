@@ -1,9 +1,0 @@
-package ifpb;
-
-public class Main {
-
-	public static void main(String[] args) {
-		//inicializar o gerenciador de tarefas
-		
-	}
-}

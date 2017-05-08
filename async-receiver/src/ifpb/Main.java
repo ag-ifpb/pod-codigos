@@ -11,8 +11,10 @@ public class Main {
 		//
 		System.out.println("Inicializando o receiver");
 		//
+		ResponseMessageRepository repository = new ResponseMessageRepository();
+		//
 		Registry registry = LocateRegistry.createRegistry(10991);
-		registry.bind("Receiver", new Receiver());
+		registry.bind("Receiver", new Receiver(repository));
 	}
 	
 }

@@ -1,6 +1,0 @@
-package ag.proxyserver.proxy;
-
-public interface Server {
-	boolean play();
-	int readStream();
-}

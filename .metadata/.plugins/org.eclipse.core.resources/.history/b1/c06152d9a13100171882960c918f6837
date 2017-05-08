@@ -1,0 +1,30 @@
+package ifpb;
+
+import java.io.IOException;
+import java.rmi.NotBoundException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.TimerTask;
+
+public class GetResultTask extends TimerTask {
+	private final MessageResultRepository resultRepository;
+	
+	public GetResultTask(MessageResultRepository result) {
+		this.resultRepository = result;
+	}
+
+	@Override
+	public void run() {
+		try {
+			Registry registry = LocateRegistry.getRegistry(10991);
+			IReceiver receiver = (IReceiver) registry.lookup("Receiver");
+			MessageResult result = receiver.result();
+			resultRepository.add(result);
+		}
+		catch(NotBoundException | IOException e){
+			throw new RuntimeException(e);
+		}
+		
+	}
+
+}

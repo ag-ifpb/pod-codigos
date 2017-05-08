@@ -45,11 +45,13 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="async-clientapp"/>
 			<item value="ag-node-with-docker"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="async-clientapp"/>
 			<item value="ag-node-with-docker"/>
 		</list>
 		<list key="version">

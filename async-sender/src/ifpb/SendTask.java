@@ -7,11 +7,16 @@ import java.rmi.registry.Registry;
 import java.util.List;
 import java.util.TimerTask;
 
+import ifpb.repositories.MessageRepository;
+import ifpb.repositories.SendedMessageRepository;
+
 public class SendTask extends TimerTask {
 	private final MessageRepository repository;
+	private final SendedMessageRepository sendedRepository;
 	
-	public SendTask(MessageRepository repository) {
+	public SendTask(MessageRepository repository, SendedMessageRepository sendedRepository) {
 		this.repository = repository;
+		this.sendedRepository = sendedRepository;
 	}
 	
 	@Override
@@ -33,6 +38,7 @@ public class SendTask extends TimerTask {
 					try {
 						receiver.delivery(m);
 						repository.remove(m);
+						sendedRepository.add(m);
 						break;
 					}
 					catch(RemoteException e){

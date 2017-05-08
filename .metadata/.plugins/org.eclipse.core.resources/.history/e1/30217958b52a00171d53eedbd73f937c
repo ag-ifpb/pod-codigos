@@ -1,5 +1,0 @@
-package ag.proxyserver.webcam;
-
-public interface WebCamServer {
-
-}

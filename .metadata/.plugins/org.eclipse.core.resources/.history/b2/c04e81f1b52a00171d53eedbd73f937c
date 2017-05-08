@@ -1,6 +1,0 @@
-package ag.proxyserver.webcam.reverse;
-
-public interface WebCamServer {
-	boolean play();
-	int readStream();
-}

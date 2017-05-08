@@ -1,5 +1,0 @@
-package ag.proxyserver.bus;
-
-public class CommandStreamer {
-
-}

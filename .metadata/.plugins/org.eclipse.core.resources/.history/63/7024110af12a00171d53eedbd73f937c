@@ -1,6 +1,0 @@
-package ag.proxyserver.proxy;
-
-public interface WebCamServer {
-	boolean play();
-	int readStream();
-}

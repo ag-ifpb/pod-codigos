@@ -6,8 +6,28 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class Main {
+	
+	private static void sendAndResultMessaage(String id, String text, ISender sender) throws RemoteException, InterruptedException{
+		//
+		sender.sendMessage(new Message(id, text));
+		//recuperar uma resposta
+		while(true){
+			//
+			Thread.sleep(2000);
+			//
+			System.out.println("Verificando se há resposta.");
+			MessageResult result = sender.getMessage(id);
+			if (result == null) {
+				continue;
+			}
+			else {
+				System.out.println("Recebido resultado para mensagem " + id + ": " + result.getHash());
+				break;
+			}
+		}
+	}
 
-	public static void main(String[] args) throws RemoteException, NotBoundException {
+	public static void main(String[] args) throws RemoteException, NotBoundException, InterruptedException {
 		//log
 		System.out.println("Acionado o clientapp");
 		//recuperação do Sender
@@ -17,9 +37,23 @@ public class Main {
 		String id = "askjdlkasjd";
 		String text = "Hello World!";
 		//
-		sender.sendMessage(new Message(id, text));
-		//recuperar uma resposta
-		//??????
+		for (int i = 0; i < 10; i++){
+			//
+			final String ix = id + "#" + i;
+			final String mx = text + "#" + i;
+			//
+			Thread t = new Thread(){
+				public void run() {
+					try {
+						sendAndResultMessaage(ix, mx, sender);
+					} 
+					catch (RemoteException | InterruptedException e) {
+						e.printStackTrace();
+					}
+				};
+			};
+			t.start();
+		}
 	}
 	
 }

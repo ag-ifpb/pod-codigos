@@ -1,5 +1,0 @@
-package ag.proxyserver.proxy;
-
-public class ProxyServerException extends Exception {
-
-}

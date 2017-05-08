@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=async-share/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_91.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1459498886000"/>
-<typeInfo handle="=async-share/src&lt;ifpb{ISender.java[ISender" modifiers="513" timestamp="1493300951000"/>
-<typeInfo handle="=async-share/src&lt;ifpb{IServerApp.java[IServerApp" modifiers="513" timestamp="1493302962000"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

@@ -1,7 +1,0 @@
-package ifpb;
-
-import java.rmi.Remote;
-
-public interface ISenderApp extends Remote{
-
-}

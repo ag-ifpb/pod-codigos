@@ -1,0 +1,31 @@
+package ifpb;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+@SuppressWarnings("serial")
+public class SenderImpl extends UnicastRemoteObject implements ISender {
+	private final MessageRepository repository;
+	private final MessageResultRepository resultRepository;
+	
+	public SenderImpl(MessageRepository rep, MessageResultRepository resultRep) throws RemoteException{
+		this.repository = rep;
+		this.resultRepository = resultRep;
+	}
+
+	@Override
+	public void sendMessage(Message dto) throws RemoteException{
+		//armazenar temporariamente a mensagem
+		repository.add(dto);
+	}
+	
+	@Override
+	public MessageResult getMessage(String id) throws RemoteException {
+		//recuperar a mensagem no repositório
+		synchronized (resultRepository) {
+			MessageResult result = resultRepository.get(id);
+			return result;
+		}
+	}
+
+}

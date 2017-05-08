@@ -1,7 +1,0 @@
-package ifpb;
-
-import java.rmi.RemoteException;
-
-public interface IReceiver {
-	void delivery(Message msg) throws RemoteException;
-}

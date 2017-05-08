@@ -1,0 +1,16 @@
+package ifpb;
+
+import java.util.Timer;
+
+import ifpb.repositories.MessageRepository;
+import ifpb.repositories.MessageResultRepository;
+
+public class TaskManager {
+	
+	public static void runTask(MessageRepository repository, MessageResultRepository resultRepository){
+		Timer timer = new Timer();
+		timer.schedule(new SendTask(repository), 3000, 10000);
+		timer.schedule(new GetResultTask(repository, resultRepository), 2000, 2000);
+	}
+	
+}
