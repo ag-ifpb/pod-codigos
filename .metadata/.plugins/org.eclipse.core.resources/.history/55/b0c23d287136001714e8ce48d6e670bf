@@ -1,0 +1,65 @@
+package ag.proxyserver.proxy;
+
+import java.io.IOException;
+import java.net.Socket;
+
+import ag.proxyserver.Constants;
+import ag.proxyserver.Logger;
+import ag.proxyserver.proxy.impl.ProxyServerImpl;
+import ag.proxyserver.streamer.StreamBinderManager;
+import ag.proxyserver.util.Util;
+
+public class ProxyServerSocket extends Thread {
+	private final Socket socket;
+	private final ProxyServer server;
+	
+	public ProxyServerSocket(Socket socket, StreamBinderManager manager) {
+		this.socket = socket;
+		this.server = new ProxyServerImpl(manager);
+	}
+	
+//	public void play() throws IOException{
+//		//ler o stream do controller
+//		String imsg = Util.readInputStream(socket.getInputStream());
+//		//identificar o comando (PLAY)
+//		String code = imsg.replace(Constants.END_TOKEN, "");
+//		//log
+//		Logger.info("Recebendo um comando de PLAY para " + code);
+//		//acionar o comando do server server
+//		boolean ok = false;
+//		try {
+//			ok = server.play(code);
+//			//enviar um OK ou ERROR
+//			String omsg = (ok ? "OK" : "ERROR") + Constants.END_TOKEN;
+//			socket.getOutputStream().write(omsg.getBytes());
+//			socket.getOutputStream().flush();
+//		} 
+//		catch (ProxyServerException e) {
+//			ok = false;
+//		}
+//		//
+//		//enviar um OK ou ERROR
+//		String omsg = (ok ? "OK" : "ERROR") + Constants.END_TOKEN;
+//		socket.getOutputStream().write(omsg.getBytes());
+//		socket.getOutputStream().flush();
+//	}
+	
+	public void readStream() throws IOException{
+		int b = server.readStream();
+		socket.getOutputStream().write(b);
+	}
+
+	@Override
+	public void run() {
+		try {
+			play();//envia um comando
+			while(true){
+				readStream();
+			}
+		}
+		catch(IOException e){
+			throw new RuntimeException(e);
+		}
+	}
+	
+}

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="ag.proxyserver.WebCamException"/>
-<fullyQualifiedTypeName name="ag.proxyserver.ProxyServerException"/>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="ag.proxyserver.Commander"/>
-<fullyQualifiedTypeName name="ag.proxyserver.PlayCallback"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="ag.proxyserver.proxy.WebCamServer"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
@@ -35,12 +29,8 @@
 <fullyQualifiedTypeName name="ifpb.SendTask"/>
 <fullyQualifiedTypeName name="ifpb.TaskManager"/>
 <fullyQualifiedTypeName name="ifpb.SenderImpl"/>
-<fullyQualifiedTypeName name="java.rmi.Remote"/>
 <fullyQualifiedTypeName name="java.rmi.AccessException"/>
-<fullyQualifiedTypeName name="ifpb.Receiver"/>
 <fullyQualifiedTypeName name="ifpb.ServerApp"/>
-<fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
-<fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
 <fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
 <fullyQualifiedTypeName name="ifpb.IReceiver"/>
 <fullyQualifiedTypeName name="java.rmi.NotBoundException"/>
@@ -54,10 +44,20 @@
 <fullyQualifiedTypeName name="ifpb.Message"/>
 <fullyQualifiedTypeName name="java.security.MessageDigest"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
 <fullyQualifiedTypeName name="ifpb.ResponseMessageRepository"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="ifpb.MessageResult"/>
 <fullyQualifiedTypeName name="ifpb.repositories.SendedMessageRepository"/>
 <fullyQualifiedTypeName name="java.math.BigInteger"/>
+<fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
+<fullyQualifiedTypeName name="ifpb.repositories.MessageResultRepository"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.rmi.Remote"/>
+<fullyQualifiedTypeName name="ifpb.MessageResult"/>
+<fullyQualifiedTypeName name="java.util.Observer"/>
+<fullyQualifiedTypeName name="ifpb.ObserverImpl"/>
+<fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+<fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
+<fullyQualifiedTypeName name="ifpb.Subject"/>
+<fullyQualifiedTypeName name="ifpb.Observer"/>
+<fullyQualifiedTypeName name="ifpb.Receiver"/>
 </qualifiedTypeNameHistroy>

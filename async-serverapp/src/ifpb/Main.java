@@ -12,7 +12,7 @@ public class Main {
 		System.out.println("Servidor inicializado");
 		//
 		Registry registry = LocateRegistry.createRegistry(10992);
-		registry.bind("ServerApp", new ServerApp());
-		
+		registry.bind("ServerApp", new ServerApp());		
 	}
+	
 }

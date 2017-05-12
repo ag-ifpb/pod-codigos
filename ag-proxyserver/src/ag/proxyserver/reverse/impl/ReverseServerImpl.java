@@ -2,6 +2,7 @@ package ag.proxyserver.reverse.impl;
 
 import ag.proxyserver.CodeGenerator;
 import ag.proxyserver.CodeRepository;
+import ag.proxyserver.Logger;
 import ag.proxyserver.reverse.ReverseServer;
 import ag.proxyserver.reverse.ReverseServerException;
 import ag.proxyserver.streamer.Stream;
@@ -44,7 +45,7 @@ public class ReverseServerImpl implements ReverseServer {
 		StreamBinder binder = manager.getBinder(code);
 		Stream stream = binder.getCommandStream();
 		//
-		return Util.readStream(stream);
+		return Util.readStream(stream);//TODO bloqueando aqui
 	}
 
 	@Override
@@ -54,6 +55,7 @@ public class ReverseServerImpl implements ReverseServer {
 		StreamBinder binder = manager.getBinder(code);
 		Stream stream = binder.getTransferStream();
 		//
+		Logger.info("- enviando um byte para transferência.");
 		stream.send(byteStream);
 	}
 

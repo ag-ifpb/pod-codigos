@@ -61,7 +61,7 @@ public class ReverseServerSocket extends Thread {
 		//
 		Logger.info("Aguardando comando.");
 		//
-		String command = server.awaitCommand();
+		String command = server.awaitCommand();//TODO está bloqueando...
 		//
 		Logger.info("Comando recebido: " + command);
 		//preparar mensagem
@@ -77,6 +77,9 @@ public class ReverseServerSocket extends Thread {
 			@Override
 			public void write(int byteStream) {
 				try {
+					//
+					Logger.info("- enviando um byte para transferência.");
+					//
 					server.transferStreamToProxy(byteStream);
 				} catch (ReverseServerException e) {
 					e.printStackTrace();
@@ -101,6 +104,7 @@ public class ReverseServerSocket extends Thread {
 						//aguardar comando
 						awaitCommand();
 						//	transfere o stream da web cam
+						Logger.info("- transferindo.");
 						transferStream();
 					}
 					catch(IOException e){

@@ -1,0 +1,30 @@
+package ag.proxyserver.proxy;
+
+import java.rmi.ServerException;
+
+/**
+ * Server possui as funcionalidades da
+ * webcam como: registrar no servidor proxy,
+ * iniciar a filmagem e encaminhar stream para o proxy.
+ * 
+ * @author arigarcia
+ *
+ */
+public interface ProxyServer {
+	
+	/**
+	 * Inicializar a leitura da webcam.
+	 * @throws ProxyServerException 
+	 * 
+	 * @throws ServerException - disparado caso não consiga iniciar
+	 * o play (erro 3001).
+	 */
+	boolean play(String code) throws ProxyServerException;
+	
+	/**
+	 * Retorna o stream do server
+	 * 
+	 * @throws ServerException - disparado caso não consiga resolver (erro 3002).
+	 */
+//	int readStream();
+}

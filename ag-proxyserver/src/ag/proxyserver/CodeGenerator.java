@@ -1,5 +1,11 @@
 package ag.proxyserver;
 
+/**
+ * Gerador do código de registro da WebCam. 
+ * 
+ * @author arigarcia
+ *
+ */
 public class CodeGenerator {
 	private static char[] hashs = new char[]{'A', 'B', 'C', 'F', 'X', 'Z', '0', '3', '8', '9'};//10
 	

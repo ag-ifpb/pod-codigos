@@ -1,0 +1,26 @@
+package ifpb;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import ifpb.repositories.MessageResultRepository;
+
+@SuppressWarnings("serial")
+public class Observer extends UnicastRemoteObject implements Remote{
+	private final MessageResultRepository resultRepository;
+	
+	public Observer(MessageResultRepository rep) throws RemoteException{
+		this.resultRepository = rep;
+	}
+	
+	public void notify(MessageResult result) throws RemoteException {
+		//adicionar o resultado na lista de resultados
+		resultRepository.add(result);
+	}
+	
+	public static void registry(){
+		
+	}
+	
+}

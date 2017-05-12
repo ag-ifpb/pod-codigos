@@ -17,8 +17,8 @@ public class Stream {
 		Logger.info("Stream recv()");
 		synchronized (b) {
 			b.wait();
+			return b[0];
 		}
-		return b[0];
 	}
 	
 }

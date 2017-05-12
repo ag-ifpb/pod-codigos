@@ -37,7 +37,7 @@ public class Main {
 		String id = "askjdlkasjd";
 		String text = "Hello World!";
 		//
-		for (int i = 0; i < 10; i++){
+		for (int i = 0; i < 100; i++){
 			//
 			final String ix = id + "#" + i;
 			final String mx = text + "#" + i;
@@ -54,6 +54,7 @@ public class Main {
 			};
 			t.start();
 		}
+		
 	}
 	
 }

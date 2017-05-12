@@ -28,7 +28,7 @@ public class WebCamTest {
 		System.out.println(new String(b));
 		//aguardando um comando
 		String comm = Util.readInputStream(socket.getInputStream());
-		System.out.println("Comando recebido pela webcam");
+		System.out.println("Comando recebido pela webcam: " + comm);
 		//transferir video
 		FileInputStream finput = new FileInputStream("preview-app-iphone.mp4");
 		//

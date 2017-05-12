@@ -2,6 +2,12 @@ package ag.proxyserver;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Armazenar os códigos de registro 
+ * 
+ * @author arigarcia
+ *
+ */
 public class CodeRepository {
 	private static final List<String> list = new ArrayList<>();
 	
