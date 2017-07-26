@@ -63,6 +63,7 @@ public class Subscriber {
 	}
 	
 	public void notify(String pubId, String msg){
+		//processamento em um subsistema
 		System.out.println(String.format("Mensagem recebida de %s: %s", pubId, msg));
 	}
 

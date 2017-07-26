@@ -1,8 +1,0 @@
-package ifpb;
-
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-
-public interface Subject extends Remote{
-	void registry(Object obj) throws RemoteException;
-}

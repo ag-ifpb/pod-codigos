@@ -8,7 +8,6 @@ package ag.ifpb.pod.ms;
  */
 public class Protocol {
 	private final static String TOKEN = "---123456---";
-	
 	private String pub;
 	private String msg;
 	private String sub;

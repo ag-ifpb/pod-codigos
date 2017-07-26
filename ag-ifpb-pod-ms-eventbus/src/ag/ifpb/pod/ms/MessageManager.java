@@ -10,7 +10,11 @@ import java.util.List;
  *
  */
 public class MessageManager {
-	private List<Message> repository = new ArrayList<Message>();
+	private final MessageRepository repository;
+	
+	public MessageManager() {
+		repository = new MessageRepository();
+	}
 	
 	/**
 	 * Persiste a mensagem publicada
@@ -26,7 +30,7 @@ public class MessageManager {
 	 * 
 	 * @param message - mensagem a ser removida
 	 */
-	public void unplublisher(Message message){
+	public void unplublish(Message message){
 		repository.remove(message);
 	}
 	
@@ -38,7 +42,7 @@ public class MessageManager {
 	 */
 	public List<Message> find(String subscriberId){
 		List<Message> result = new ArrayList<Message>();
-		for (Message message : repository) {
+		for (Message message : repository.list()) {
 			if (message.getSubscriberId().equals(subscriberId)){
 				result.add(message);
 			}

@@ -4,12 +4,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class TaskManager implements Runnable{
-	private final Register register;
+	private final SubscriberManager register;
 	private final MessageManager messageManager;
-	private final Notifier notifier;
+	private final PublisherManager notifier;
 	
-	public TaskManager(Register register, MessageManager messageManager,
-			Notifier notifier){
+	public TaskManager(SubscriberManager register, MessageManager messageManager,
+			PublisherManager notifier){
 		this.register = register;
 		this.messageManager = messageManager;
 		this.notifier = notifier;
@@ -26,8 +26,9 @@ public class TaskManager implements Runnable{
 	}
 	
 	private void notifyAndRemoveMessage(String subscriber, Message message){
-		notifier.notify(subscriber, message);
-		messageManager.unplublisher(message);
+		if (notifier.notify(subscriber, message)){
+			messageManager.unplublish(message);
+		}
 	}
 	
 	@Override

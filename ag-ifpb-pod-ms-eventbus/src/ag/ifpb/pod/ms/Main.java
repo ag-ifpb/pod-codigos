@@ -12,7 +12,7 @@ public class Main {//192.168.1.111
 	final static String TOKEN = "---123456---";
 	
 	/**
-	 * Extrai os dados da mensagem
+	 * Extrai os dados da   mensagem
 	 * - [0]: publisherId
 	 * - [1]: subscriberId
 	 * - [2]: text
@@ -27,8 +27,8 @@ public class Main {//192.168.1.111
 		throw new RuntimeException("Mensagem estruturada incorretamente.");
 	}
 	
-	private static void createSubscriberServer(Register register) throws IOException {
-		ServerSocket subscriberServerSocket = new ServerSocket(10998);
+	private static void createSubscriberServer(SubscriberManager register) throws IOException {
+		ServerSocket subscriberServerSocket = new ServerSocket(10998, 10);
 		while(true){
 			//log
 			System.out.println("Aguardando conexão do subscriber.");
@@ -50,7 +50,7 @@ public class Main {//192.168.1.111
 	}
 	
 	private static void createPublisherServer(MessageManager manager) throws IOException {
-		ServerSocket publisherServerSocket = new ServerSocket(10999);
+		ServerSocket publisherServerSocket = new ServerSocket(10999, 10);
 		while(true){
 			//log
 			System.out.println("Aguardando conexão do publisher.");
@@ -89,8 +89,8 @@ public class Main {//192.168.1.111
 
 	public static void main(String[] args) throws IOException {
 		//instanciar os elementos principais
-		Register register = new Register();
-		Notifier notifier = new Notifier(register);
+		SubscriberManager register = new SubscriberManager();
+		PublisherManager notifier = new PublisherManager(register);
 		MessageManager manager = new MessageManager();
 		TaskManager taskManager = new TaskManager(register, manager, notifier);
 		//programar o background
