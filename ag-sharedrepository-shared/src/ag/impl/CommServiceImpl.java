@@ -9,9 +9,9 @@ import ag.MessageManager;
 import ag.RepositoryLocator;
 
 public class CommServiceImpl implements CommService {
-	private static final String FUNC_NAME = "hello()";//'./'
-	private static final String MSG_REQ_TYPE = "msgReq";//req.txt
-	private static final String MSG_RESP_TYPE = "msgResp";//resp.txt
+	public static final String FUNC_NAME = "hello()";//'./'
+	public static final String MSG_REQ_TYPE = "msgReq";//req.txt
+	public static final String MSG_RESP_TYPE = "msgResp";//resp.txt
 	private final MessageManager manager;
 	
 	public CommServiceImpl(RepositoryLocator locator) {
@@ -33,7 +33,7 @@ public class CommServiceImpl implements CommService {
 	@Override
 	public void send(Message message) throws FileNotFoundException, IOException {
 		//dest = 'node2' (server)
-		if (message.getTo().equals("node2")){
+		if (message.getFrom().equals("node2")){
 			//ler uma mensagem a partir de uma função e um tipo de mensagem
 			manager.write(FUNC_NAME, MSG_RESP_TYPE, message);
 		} else {

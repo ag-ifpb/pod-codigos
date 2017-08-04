@@ -135,6 +135,7 @@ public class MessageManager {
 		String dir = locator.function(functionName);
 		String fil = locator.messageType(messageTypeName);
 		//carregar e ler conteúdo do arquivo
+		System.out.println("-----------> " + dir + "/" + fil);
 		File file = new File(dir, fil);
 		String msg = convert(message);
 		write(file, msg);
