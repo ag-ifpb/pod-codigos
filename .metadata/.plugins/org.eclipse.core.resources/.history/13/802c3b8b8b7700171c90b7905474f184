@@ -1,0 +1,16 @@
+package ag;
+
+/**
+ * Responsável ler e escrever mensagens
+ * no repositório. Além disso deve excluir 
+ * todas as mensagens que foram entregues.
+ * 
+ * Relacionar as mensagens de requisição e
+ * de resposta. 
+ * 
+ * @author arigarcia
+ *
+ */
+public class MessageManager {
+
+}

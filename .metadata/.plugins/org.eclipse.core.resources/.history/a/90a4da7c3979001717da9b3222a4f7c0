@@ -1,0 +1,25 @@
+package ag;
+
+/**
+ * Representa o serviço de comunicação
+ * oferecido pelo Middleware
+ * 
+ * @author arigarcia
+ *
+ */
+public interface CommService {
+	
+	/**
+	 * Envia uma mensagem
+	 * 
+	 * @param message
+	 */
+	void send(Message message);
+	
+	/**
+	 * Recebe uma mensagem
+	 * 
+	 * @param message
+	 */
+	Message recv(String dest);
+}

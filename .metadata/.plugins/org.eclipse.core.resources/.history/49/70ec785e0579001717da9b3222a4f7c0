@@ -1,0 +1,14 @@
+package ag;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MessageManagerTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

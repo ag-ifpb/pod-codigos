@@ -6,10 +6,10 @@ import java.util.List;
 public class TaskManager implements Runnable{
 	private final SubscriberManager register;
 	private final MessageManager messageManager;
-	private final PublisherManager notifier;
+	private final PublishingManager notifier;
 	
 	public TaskManager(SubscriberManager register, MessageManager messageManager,
-			PublisherManager notifier){
+			PublishingManager notifier){
 		this.register = register;
 		this.messageManager = messageManager;
 		this.notifier = notifier;

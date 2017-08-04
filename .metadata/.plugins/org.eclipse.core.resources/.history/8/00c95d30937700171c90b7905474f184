@@ -1,0 +1,75 @@
+package ag;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+/**
+ * Responsável ler e escrever mensagens
+ * no repositório. Além disso deve excluir 
+ * todas as mensagens que foram entregues.
+ * 
+ * Relacionar as mensagens de requisição e
+ * de resposta.
+ * 
+ * Obs.: criar um arquivo .lock antes de 
+ * ler/escrever o arquivo de mensagens.
+ * 
+ * @author arigarcia
+ *
+ */
+public class MessageManager {
+	private final RepositoryLocator locator;
+	
+	private String read(File file) throws FileNotFoundException, IOException{
+		FileInputStream input = new FileInputStream(file);
+		byte[] b = new byte[1024];
+		input.read(b);
+		input.close();
+		String msg = new String(b);
+		return msg.trim();
+	}
+	
+	private void write(File file, String msg) throws FileNotFoundException, IOException{
+		FileOutputStream output = new FileOutputStream(file, true);
+		String formatted_msg = msg + "\r\n"; 
+		output.write(msg.getBytes());
+		output.close();
+	}
+	
+	private void remove(File file, String msg){
+		//
+		FileInputStream input = new FileInputStream(file);
+		FileOutputStream output = new FileOutputStream(file);
+		//
+		BufferedInputStream reader = new BufferedInputStream(input);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		//
+		String line;
+		while ((line = bufferedReader.readLine()) != null){
+			if (line.equals(msg)){
+				continue;
+			}
+			String remsg = line + "\r\n";
+			output.write(remsg.getBytes());
+		}
+		//
+		reader.close();
+		input.close();
+		output.close();
+	}
+	
+	private String convert(Message msg){
+		
+	}
+	
+	private Message convert(String msg){
+		
+	}
+	
+	
+}

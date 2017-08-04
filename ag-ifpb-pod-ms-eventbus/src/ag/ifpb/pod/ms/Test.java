@@ -1,8 +1,12 @@
 package ag.ifpb.pod.ms;
 
 import java.util.Arrays;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Test {
+import javax.swing.JFrame;
+
+public class Test{
 
 	public static void main(String[] args) {
 		String text = "---123456---" + "aristo|nio" + "---123456---";
@@ -10,6 +14,7 @@ public class Test {
 		if (text.startsWith(t) && text.endsWith(t)){
 			System.out.println(Arrays.toString(text.replaceAll(t, "").split("\\|")));
 		}
+		
 		//throw new RuntimeException("Mensagem estruturada incorretamente.");
 	}
 }

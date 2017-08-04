@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class Main {//192.168.1.111
+public class Main {
 	final static String TOKEN = "---123456---";
 	
 	/**
@@ -28,8 +28,8 @@ public class Main {//192.168.1.111
 	}
 	
 	private static void createSubscriberServer(SubscriberManager register) throws IOException {
-		ServerSocket subscriberServerSocket = new ServerSocket(10998, 10);
-		while(true){
+		ServerSocket subscriberServerSocket = new ServerSocket(10998);
+		while(true) {
 			//log
 			System.out.println("Aguardando conexão do subscriber.");
 			//connect
@@ -90,7 +90,7 @@ public class Main {//192.168.1.111
 	public static void main(String[] args) throws IOException {
 		//instanciar os elementos principais
 		SubscriberManager register = new SubscriberManager();
-		PublisherManager notifier = new PublisherManager(register);
+		PublishingManager notifier = new PublishingManager(register);
 		MessageManager manager = new MessageManager();
 		TaskManager taskManager = new TaskManager(register, manager, notifier);
 		//programar o background

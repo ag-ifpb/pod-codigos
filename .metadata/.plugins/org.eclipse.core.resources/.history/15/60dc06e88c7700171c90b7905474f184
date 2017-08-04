@@ -1,0 +1,13 @@
+package ag;
+
+/**
+ * Responsável por encontrar todos os
+ * diretórios e arquivos no repositório 
+ * compartilhado
+ * 
+ * @author arigarcia
+ *
+ */
+public class RepositoryLocator {
+
+}
