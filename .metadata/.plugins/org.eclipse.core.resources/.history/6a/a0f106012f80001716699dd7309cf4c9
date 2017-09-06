@@ -1,0 +1,23 @@
+package br.com.cesar.interoperabilidade;
+
+
+
+public class PoliCypher {
+	private final Cypher cypher;
+	
+	public PoliCypher(Cypher cypher) {
+		this.cypher = cypher;
+	}
+	
+	public String decode(int[] key, String text, int delph){
+		//texto recursivo
+		String t = text;
+		//se a profundidade for maior que 1
+		if (delph >= 1){
+			t = decode(key, cypher.decode(key[delph - 1], t), delph - 1);
+		}
+		//
+		return t;
+	}
+
+}

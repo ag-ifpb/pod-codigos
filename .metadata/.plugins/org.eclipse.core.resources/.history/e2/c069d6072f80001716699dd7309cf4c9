@@ -1,0 +1,20 @@
+package ag.ifpb;
+
+public interface Encripter {
+
+	/**
+	 * Criptografando usando DES mais de uma vez
+	 * 
+	 * @param key
+	 * @param text
+	 * @return
+	 */
+	String encr(Strategy int key, String text);
+	
+	String encr1DES2Cesar(int key, String text);
+	
+	String decr2DES1Cesar(int key, String text);
+	
+	String decr1DES2Cesar(int key, String text);
+	
+}

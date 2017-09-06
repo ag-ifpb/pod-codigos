@@ -1,0 +1,9 @@
+package br.com.cesar.interoperabilidade;
+
+public interface Cypher {
+	
+	String encode(int key, String text);
+	
+	String decode(int key, String text);
+
+}

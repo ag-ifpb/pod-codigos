@@ -1,0 +1,19 @@
+package ag.ifpb.service.impl;
+
+import ag.ifpb.service.Searcher;
+
+public class SearcherImpl extends Searcher {
+
+	@Override
+	protected int genCesarKey() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	protected int genDESKey() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

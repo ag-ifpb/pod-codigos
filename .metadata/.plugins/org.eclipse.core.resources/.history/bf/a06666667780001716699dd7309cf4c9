@@ -1,0 +1,24 @@
+package ag.ifpb;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public abstract class Searcher {
+	
+	protected abstract EncriptionType nextType();
+	
+	protected abstract int[] nextKeys();
+	
+	public void start(){
+		//setup - pode ser configurável
+		int iterMax = 1000000;
+		int threMax = 10;
+		//criando um pool de threads fixo 
+		ExecutorService service = Executors.newFixedThreadPool(threMax); 
+		//iniciado as tarefas
+		for (int cnt = 0; cnt < iterMax; cnt++) {
+			
+		}
+	}
+	
+}

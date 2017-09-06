@@ -1,0 +1,5 @@
+package ag.ifpb.service.impl;
+
+public class DecryptionException extends Exception {
+
+}

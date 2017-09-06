@@ -1,0 +1,21 @@
+1502601518366	Rename type 'DESDecoder'
+1502632244820	Rename compilation unit 'Strategy.java'
+1502632465057	Rename type 'EncriptationStrategy'
+1502632502738	Rename type 'Cypher'
+1502632514154	Delete element
+1502634643196	Delete element
+1502643726803	Delete element
+1502643839595	Rename type 'Cipher'
+1502644774175	Move compilation unit
+1502648296875	Copy compilation unit
+1502660478712	Copy compilation unit
+1502660529052	Copy compilation unit
+1502660588964	Rename type 'EncryptionStrategy'
+1502660881731	Rename type 'EncrypterFactory'
+1502660905853	Rename type 'EncrypterFactoryImpl'
+1502660914331	Delete element
+1502660928180	Rename type 'EncryptionStrategyImpl'
+1502662412104	Rename type 'KeyArrayGenerator'
+1502663636093	Move compilation units
+1502663651461	Move compilation units
+1502663656265	Delete element

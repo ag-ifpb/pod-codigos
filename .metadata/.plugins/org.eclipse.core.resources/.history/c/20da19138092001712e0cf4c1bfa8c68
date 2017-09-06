@@ -1,0 +1,38 @@
+package ifpb;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class App {
+	public static void main(String[] args) throws SQLException {
+		//
+		final PgAppender appender = new PgAppender();
+		//
+		int THREAD_POOL_SIZE = 10;
+		ExecutorService service = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
+		for (int i = 0; i < THREAD_POOL_SIZE; i++){
+			final String who = "THREAD#" + i;
+			final int initial = 1000000*i; 
+			Runnable runnable = new Runnable(){
+				public void run() {
+					try {
+						final Connection conn = appender.connect();
+						System.out.println(conn);
+						//execução SINCRONA (em 29431ms)
+						long t0 = System.currentTimeMillis();
+						appender.insert(conn, initial, who);
+						long t1 = System.currentTimeMillis();
+						//.................
+						System.out.println(t1 - t0);
+					} catch(SQLException e){
+						e.printStackTrace();
+					}
+				};
+			};
+			service.execute(runnable);
+		}
+		service.shutdown();
+	}
+}

@@ -1,0 +1,34 @@
+package ag.ifpb.service;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public abstract class Searcher {
+	private final StrategyFactory strategyFactory;
+	
+	protected abstract EncriptionType nextType();
+	
+	protected abstract int[] nextKeys();
+	
+	public Searcher(StrategyFactory strategyFactory) {
+		this.strategyFactory = strategyFactory;
+	}
+	
+	public void start(String text){
+		//setup - pode ser configurável
+		int iterMax = 1000000;
+		int threMax = 10;
+		//criando um pool de threads fixo 
+		ExecutorService service = Executors.newFixedThreadPool(threMax);
+		//iniciado as tarefas
+		for (int cnt = 0; cnt < iterMax; cnt++) {
+			//
+			int[] ks = nextKeys();
+			EncriptionType type = nextType();
+			//
+			
+			
+		}
+	}
+	
+}

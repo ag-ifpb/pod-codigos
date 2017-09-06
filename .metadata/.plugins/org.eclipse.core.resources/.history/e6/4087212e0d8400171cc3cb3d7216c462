@@ -1,0 +1,22 @@
+
+public class Main0 {
+	private static int count = 0;
+	
+	private static void count(){
+		Thread t = new Thread(){
+			public void run() {count++};
+		};
+		t.start();
+	}
+
+	public static void main(String[] args) {
+		long t0 = System.nanoTime();
+		for (int i = 0; i < 10000; i++){
+			count();
+		}
+		long t1 = System.nanoTime();
+		System.out.println(String.format("count: %d, time: %dns", count, (t1-t0)));
+	}
+	
+	
+}

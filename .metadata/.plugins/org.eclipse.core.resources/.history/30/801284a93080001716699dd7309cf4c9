@@ -1,0 +1,16 @@
+package ag.ifpb;
+
+public class EncrypterFactory {
+	public static final String TYPE_0 = "C-C-D";//Cesar-Cesar-DES
+	public static final String TYPE_1 = "C-D-C";//Cesar-DES-Cesar
+	public static final String TYPE_2 = "D-C-C";//DES-Cesar-Cesar
+	public static final String TYPE_3 = "D-D-C";//DES-DES-Cesar
+	public static final String TYPE_4 = "D-C-D";//DES-Cesar-DES
+	public static final String TYPE_5 = "C-D-D";//Cesar-DES-DES
+	
+
+	public void encript(String type, int[] key, String text){
+		
+	}
+	
+}

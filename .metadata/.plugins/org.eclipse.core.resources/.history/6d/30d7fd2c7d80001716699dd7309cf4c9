@@ -1,0 +1,8 @@
+
+public class HexRandom {
+
+	public static void main(String[] args) {
+		int value = (int) (Math.random() * 16);
+		System.out.println(Integer.toHexString(value));
+	}
+}

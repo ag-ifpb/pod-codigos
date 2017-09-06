@@ -1,0 +1,15 @@
+package ag.ifpb.service;
+
+public class Worker implements Runnable {
+	private final Strategy strategy;
+	
+	public Worker(Strategy strategy) {
+		this.strategy = strategy;
+	}
+
+	@Override
+	public void run() {
+		strategy.decrypt(ks, text);
+	}
+
+}

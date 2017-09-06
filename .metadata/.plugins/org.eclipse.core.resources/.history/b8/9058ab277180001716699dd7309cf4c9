@@ -1,0 +1,25 @@
+package ag.ifpb.impl;
+
+import ag.ifpb.DecrypterFactory;
+import ag.ifpb.EncriptionType;
+import ag.ifpb.Strategy;
+
+public class DecrypterFactoryImpl implements DecrypterFactory {
+
+	@Override
+	public Strategy strategy(final EncriptionType type) {
+		//
+		System.out.println("Estratégia selecionada: " + type);
+		//
+		CesarCipher cesarCipher = new CesarCipher();
+		DESCipher desCipher = new DESCipher();
+		Strategy strategy = new EncryptionStrategyImpl(cesarCipher, desCipher) {
+			@Override
+			protected EncriptionType type() {
+				return type;
+			}
+		};
+		return strategy;
+	}
+
+}

@@ -1,0 +1,14 @@
+package ag.ifpb.service;
+
+public class EventBus {
+
+	public static void notifyResult(int[] keys, String result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void notifyError(int[] keys) {
+		// TODO Auto-generated method stub
+		
+	}
+}

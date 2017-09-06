@@ -1,0 +1,9 @@
+package ag.ifpb;
+
+public abstract class EncriptationStrategy {
+	protected abstract String encrOne(int key, String text);
+	protected abstract String encrTwo(int key, String text);
+	protected abstract String encrThree(int key, String text);
+	
+	public void 
+}

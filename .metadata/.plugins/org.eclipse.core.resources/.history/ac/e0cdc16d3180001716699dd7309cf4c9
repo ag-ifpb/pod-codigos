@@ -1,0 +1,11 @@
+package ag.ifpb;
+
+public class EncrypterFactory {
+	
+	
+
+	public void encript(String type, int[] key, String text){
+		
+	}
+	
+}

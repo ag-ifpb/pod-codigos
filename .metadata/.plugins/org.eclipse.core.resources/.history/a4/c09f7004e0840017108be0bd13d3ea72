@@ -1,0 +1,31 @@
+package ifpb;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.postgresql.Driver;
+
+public class PgAppender {
+
+	public Connection connect() throws SQLException{
+		System.out.println(Driver.getVersion());
+		return DriverManager.getConnection("jdbc:postgresql://192.168.99.100/db_pod", "postgres", "123456");
+	}
+	
+	public void insert(Connection conn, int id, String who) throws SQLException{
+		String sql = "INSERT INTO tb_dados(id, who, created_in) VALUES (?, ?, ?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		//
+		int total = id + 100000;
+		for (int i = id; i < total; i++){//para quem nao acredita...
+			ps.setInt(1, id+1);
+			ps.setString(2, who);
+			ps.setLong(3, System.currentTimeMillis());
+			ps.addBatch();
+		}
+		//
+		ps.executeBatch();
+	}
+}

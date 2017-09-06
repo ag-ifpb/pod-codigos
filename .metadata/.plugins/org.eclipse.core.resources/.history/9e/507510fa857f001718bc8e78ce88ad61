@@ -1,0 +1,25 @@
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Main {
+	private static ReentrantLock locker = new ReentrantLock();
+	
+	private static void f(){
+		locker.lock();
+		//do some thing
+		g();
+		//do some thing
+		locker.unlock();
+	}
+	
+	private static void g(){
+		locker.lock();
+		//do some thing
+		locker.unlock();
+	}
+	
+	public static void main(String[] args) {
+		f();
+		System.out.println("Hello!!");
+	}
+
+}

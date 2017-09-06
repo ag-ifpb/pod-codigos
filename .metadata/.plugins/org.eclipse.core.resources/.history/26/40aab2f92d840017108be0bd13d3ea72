@@ -1,0 +1,19 @@
+package ifpb;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class App {
+	public static void main(String[] args) throws SQLException {
+		//
+		PgAppender appender = new PgAppender();
+		Connection conn = appender.connect();
+		//execução SINCRONA (em 15424ms)
+		long t0 = System.currentTimeMillis();
+		appender.insert(conn, 1, "Eu");
+		long t1 = System.currentTimeMillis();
+		//
+		System.out.println(t1 - t0);
+		
+	}
+}
