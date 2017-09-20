@@ -19,7 +19,10 @@ public class Main {
 			public void onEvent(Event event) throws RemoteException {
 				try {
 					Object[] data = (Object[]) event.getData();
-					persister.persist((int) data[0], (String) data[1]);
+					double time = persister.persist((int) data[0], (String) data[1]);
+					//
+					Event e = new Event("on-pg-timer", time);
+					client.fire(e);
 				}
 				catch (SQLException e){
 					throw new RemoteException("Erro ao receber um evento", e);

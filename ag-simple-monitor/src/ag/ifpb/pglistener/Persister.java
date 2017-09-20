@@ -21,20 +21,15 @@ public class Persister {
 	}
 	
 
-	public long persist(int id, String who) throws SQLException{
+	public void persist(int id, String who) throws SQLException{
 		String sql = "insert into tb_dados ("
 				+ "id, who, created_in) "
 				+ "values (?, ?, ?)";
-		//
-		long time = System.currentTimeMillis();
-		//
 		PreparedStatement ps = connection.prepareStatement(sql);
 		ps.setInt(1, id);
 		ps.setString(2, who);
-		ps.setLong(3, time);
+		ps.setLong(3, System.currentTimeMillis());
 		ps.executeUpdate();
-		//
-		return time;
 	}
 	
 }
