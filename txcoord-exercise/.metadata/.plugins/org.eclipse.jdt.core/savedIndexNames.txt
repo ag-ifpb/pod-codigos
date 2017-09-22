@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+/Volumes/MacintoshHDExt/ari.aula/old/ifpb.pod/txcoord-exercise/.metadata/.plugins/org.eclipse.jdt.core
+79470590.index
+1840880999.index
+3288326153.index
+1526116787.index
+3474745598.index

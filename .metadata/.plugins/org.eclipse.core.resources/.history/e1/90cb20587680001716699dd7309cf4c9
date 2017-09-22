@@ -1,5 +1,0 @@
-package ag.ifpb;
-
-public interface Searcher {
-
-}

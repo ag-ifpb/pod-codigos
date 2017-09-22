@@ -1,8 +1,0 @@
-
-public class TypeMatch {
-
-	public static void main(String[] args) {
-		String text = "cdc";
-		System.out.println(text.matches("(?=[cd]{3})"));
-	}
-}

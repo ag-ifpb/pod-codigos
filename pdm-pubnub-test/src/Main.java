@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.pubnub.api.PNConfiguration;
 import com.pubnub.api.PubNub;
+import com.pubnub.api.PubNubException;
 import com.pubnub.api.callbacks.PNCallback;
 import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.enums.PNStatusCategory;
@@ -34,7 +35,7 @@ public class Main {
 	    pubnub.subscribe().channels(Arrays.asList("ifpb-pdm")).execute();
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, PubNubException {
 		//
 	    PNConfiguration pnConfiguration = new PNConfiguration();
 	    pnConfiguration.setSubscribeKey("sub-c-2876554e-030b-11e5-897f-02ee2ddab7fe");//ao receber mensagens
@@ -44,8 +45,8 @@ public class Main {
 	    PubNub pubnub = new PubNub(pnConfiguration);
 	    //
 	    JsonObject jsonObject = new JsonObject();
-	    jsonObject.addProperty("name", "Ari Garcia");
-	    jsonObject.addProperty("msg", "Mensagem enviada via PubNub");
+	    jsonObject.addProperty("name", "Ari Garcia 2");
+	    jsonObject.addProperty("msg", "Mensagem enviada via PubNub 2");
 	    //
 	    pubnub.publish()
 	    		.message(jsonObject)
@@ -55,6 +56,7 @@ public class Main {
 		        public void onResponse(PNPublishResult result, PNStatus status) {
 		        		System.out.println("result: "+ result.toString());
 		        		System.out.println("message-uuid: " + status.getUuid());
+		        		
 		        }
 		    });
 	    //

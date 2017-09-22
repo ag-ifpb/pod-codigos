@@ -50,6 +50,9 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="ag-simple-pglistener"/>
+			<item value="ag-simple-eventbus-shared"/>
+			<item value="ag-simple-eventbus"/>
 			<item value="pdm-pubnub-test"/>
 			<item value="ag.ifpb.security"/>
 			<item value="ag-sharedrepository-shared"/>
@@ -64,6 +67,9 @@
 			<item value="IFPB EncryptDecrypt Toy"/>
 		</list>
 		<list key="artifactId">
+			<item value="ag-simple-pglistener"/>
+			<item value="ag-simple-eventbus-shared"/>
+			<item value="ag-simple-eventbus"/>
 			<item value="pdm-pubnub-test"/>
 			<item value="ag-ifpb-security"/>
 			<item value="ag-sharedrepository-shared"/>
@@ -96,18 +102,21 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="ag.jna.samples"/>
 			<item value="ifpb"/>
 			<item value="ag.springcoloud"/>
 			<item value="ag.sharedrepository.node"/>
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="groupId">
+			<item value="ag.jna.samples"/>
 			<item value="ag-30mi-inserts"/>
 			<item value="ag-springcoloud"/>
 			<item value="ag-sharedrepository"/>
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="artifactId">
+			<item value="ag-jna-samples"/>
 			<item value="ag-30mi-inserts"/>
 			<item value="ag-springcoloud"/>
 			<item value="ag-sharedrepository-node2"/>
