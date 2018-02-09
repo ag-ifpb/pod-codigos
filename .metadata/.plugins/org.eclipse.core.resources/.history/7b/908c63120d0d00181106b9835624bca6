@@ -1,0 +1,25 @@
+package ag.threads;
+
+public class BlockingChannel {
+	private int id = 0;
+	private int state = 0;
+	private Object lock = new Object();
+	
+	public void lock() throws InterruptedException{
+		if (state == 1){
+			synchronized (lock) {
+				lock.wait();
+			}
+		} else {
+			state = 1;
+		}
+	}
+	
+	public void unlock(){
+		synchronized (lock) {
+			lock.notify();
+			state = 0;
+		}
+	}
+	
+}

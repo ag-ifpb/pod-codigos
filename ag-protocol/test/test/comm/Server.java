@@ -2,14 +2,15 @@ package test.comm;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 
 import ag.protocol.Frame;
 import ag.protocol.Transport;
 import ag.protocol.impl.DefaultTransport;
 
-public class Server {
+public class Server extends AbstractRunnable{
 
-	public static void main(String[] args) throws IOException {
+	protected void runWithException() throws IOException {
 		//
 		System.out.println("Servidor...");
 		//
@@ -17,15 +18,35 @@ public class Server {
 		Socket socket = serverSocket.accept();
 		//
 		Transport transport = new DefaultTransport(socket);
-		Frame result = transport.receive();
+		Frame frameReq = transport.receive();
 		//
-		System.out.println("-------- RESULT ----------");
-		System.out.println("IsReq:    \t" + result.isRequest());
-		System.out.println("IsText:   \t" + result.isText());
-		System.out.println("Length:   \t" + result.getLength());
-		System.out.println("Content:  \t" + new String(result.getPayload()));
+		Frame frameResp;
+		if (frameReq.isText()){
+			String ok = " (received: ok)";
+			ByteBuffer buf = ByteBuffer.allocate(frameReq.getLength()+ok.length());
+			buf.put(frameReq.getPayload());
+			buf.put(ok.getBytes());
+			frameResp = transport.send(frameReq.getIdentiy()+1, buf.array(), false, false);
+		} else {
+			String ok = "binary received: ok";
+			ByteBuffer buf = ByteBuffer.allocate(ok.length());
+			buf.put(ok.getBytes());
+			frameResp = transport.send(frameReq.getIdentiy()+1, buf.array(), false, false);
+		}
 		//
 		socket.close();
 		serverSocket.close();
+		//
+		System.out.println("Request...");
+		frameReq.dump();
+		System.out.println("Response...");
+		frameResp.dump();
 	}
+	
+	public static void main(String[] args) {
+		Server server = new Server();
+		server.run();
+	}
+	
+	
 }

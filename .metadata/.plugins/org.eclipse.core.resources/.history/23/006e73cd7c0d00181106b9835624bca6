@@ -1,0 +1,44 @@
+package ag.threads;
+
+public class BlockingQueue {
+	private int currentIndex = -1;
+	private Object[] locks;
+	
+	private void init(int c){
+		for (int i = 0; i < c; i++) {
+			locks[i] = new Object();
+		}
+		currentIndex = c - 1;
+	}
+	
+	public BlockingQueue(int capacity) {
+		locks = new Object[capacity];
+		init(capacity);
+	}
+	
+	public void remove() throws InterruptedException{
+		synchronized (locks) {
+			if (currentIndex > -1){
+				Object l = locks[currentIndex--];
+				synchronized (l) {
+					l.wait();
+				}
+			} else {//fila vazia, aguardar um elemento
+				locks.wait();
+			}
+		}
+	}
+	
+	public void enqueue() throws InterruptedException{
+		synchronized (locks) {
+			if (currentIndex + 1 > locks.length){
+				locks.wait();
+			} else {
+				Object l = locks[++currentIndex];
+				synchronized (l) {
+					l.notify();
+				}
+			}
+		}
+	}
+}

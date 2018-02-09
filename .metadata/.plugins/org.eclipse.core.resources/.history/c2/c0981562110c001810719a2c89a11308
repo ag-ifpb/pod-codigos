@@ -1,0 +1,15 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		//colocar o valor no primeiro bit do byte
+		int first = 0x80; 		// 1000 0000 ->  0x80
+		first = 0x40 | first; 	// 0100 0000 ->  0x40
+		//
+		int length = 1023;      // 0000 0011 1111 1111 -> 0x03 0xFF 
+			//operação é de AND ou de OR?
+			
+		}
+				
+	}
+}

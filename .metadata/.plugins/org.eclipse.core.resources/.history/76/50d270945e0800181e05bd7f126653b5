@@ -1,0 +1,32 @@
+
+public class Main4 {
+	private static int count = 0;
+	private static Object lock = new Object();
+	
+	private static void count(){
+		Thread t = new Thread(){
+			public void run() {
+				synchronized (lock) {
+					
+				}
+				count++;
+				System.out.println(getName() + ": " + count);
+			};
+		};
+		t.start();//inicializar
+	}
+
+	public static void main(String[] args) {
+		//marcando tempo inicial
+		long t0 = System.nanoTime();
+		//iniciando a contagem
+		for (int i = 0; i < 5; i++){
+			count();
+		}
+		//marcando o tempo final
+		long t1 = System.nanoTime();
+		//imprimindo o resultado
+		System.out.println(String.format("count: %d, time: %dns", count, (t1-t0)));
+	}	
+	
+}

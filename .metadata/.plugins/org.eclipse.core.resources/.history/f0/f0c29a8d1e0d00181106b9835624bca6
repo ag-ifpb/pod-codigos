@@ -1,0 +1,29 @@
+package ag.threads;
+
+import java.util.Arrays;
+
+public class Semaphore {
+	private int currentIndex = -1;
+	private Object[] locks;
+	
+	public Semaphore(int capacity) {
+		locks = new Object[capacity];
+		Arrays.fill(locks, new Object()); 
+	}
+	
+	public void stop() throws InterruptedException{
+		synchronized (locks) {
+			if (currentIndex < locks.length-1){
+				locks[++currentIndex].wait();
+			}
+		}
+	}
+	
+	public void release(){
+		synchronized (locks) {
+			if (currentIndex > -1){
+				locks[currentIndex--].notify();
+			}
+		}
+	}
+}

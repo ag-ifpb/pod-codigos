@@ -1,0 +1,35 @@
+package ag.ifpb.pglistener;
+
+import java.rmi.RemoteException;
+import java.sql.SQLException;
+
+import ag.ifpb.eventbus.Event;
+import ag.ifpb.eventbus.client.EventBusClient;
+import ag.ifpb.eventbus.client.ListenerImpl;
+
+public class Main {
+
+	public static void main(String[] args) throws RemoteException {
+		//
+		System.out.println("Iniciando o MyListener");
+		//
+		final Persister persister = new Persister();
+		//
+		EventBusClient client = new EventBusClient();
+		client.on("on-insert", new ListenerImpl() {
+			@Override
+			public void onEvent(Event event) throws RemoteException {
+				try {
+					Object[] data = (Object[]) event.getData();
+					double time = persister.persist((int) data[0], (String) data[1]);
+					//
+					Event e = new Event("on-my-timer", time);
+					client.fire(e);
+				}
+				catch (SQLException e){
+					throw new RemoteException("Erro ao receber um evento", e);
+				}
+			}
+		});
+	}
+}

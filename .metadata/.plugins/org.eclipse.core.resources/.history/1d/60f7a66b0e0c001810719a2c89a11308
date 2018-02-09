@@ -1,0 +1,19 @@
+package ag.protocol.impl;
+
+import ag.protocol.Frame;
+import ag.protocol.FrameMarshaller;
+
+public class FrameMarshallerImpl implements FrameMarshaller {
+
+	@Override
+	public byte[] marshal(Frame frame) {
+		//colocar o valor no primeiro bit do byte
+		int first = 0x00;
+		if (!frame.isRequest()){//0 - req e 1 - resp
+			first = 0x80; // 1000 0000
+		}
+		
+		return null;
+	}
+
+}

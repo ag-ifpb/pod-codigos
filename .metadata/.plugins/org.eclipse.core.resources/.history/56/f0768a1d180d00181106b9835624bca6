@@ -1,0 +1,37 @@
+package ag.threads;
+
+import java.sql.SQLException;
+
+public class UpdateOperation implements Runnable {
+	private final Operation op;
+	private final Thread t0;
+	
+	public UpdateOperation(Operation op, Thread t0) {
+		this.op = op;
+		this.t0 = t0;
+	}
+	
+	public void run() {
+		//como garantir um ID único???
+		try {
+			//aguardar a inserção
+			System.out.println("aguardando t0");
+			synchronized (t0) {
+				t0.wait();
+			}
+			//operar
+			int id = op.getID();
+			op.update(id);
+			System.out.println("opupdate " + id);
+			//notificar
+			synchronized (this) {
+				notify();
+			}
+			System.out.println("notificando t2");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}

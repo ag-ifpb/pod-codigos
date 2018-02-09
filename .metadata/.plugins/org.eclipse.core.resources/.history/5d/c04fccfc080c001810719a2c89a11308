@@ -1,0 +1,5 @@
+package ag.protocol.impl;
+
+public class DefaultTransport {
+
+}

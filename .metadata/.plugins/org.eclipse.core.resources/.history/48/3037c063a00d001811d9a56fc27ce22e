@@ -1,0 +1,24 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import ag.protocol.Frame;
+import ag.protocol.Transport;
+import ag.protocol.impl.DefaultTransport;
+
+public class ClientTest {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		//
+		Frame frame = new Frame();//01
+		frame.setPayload("HELO GUYS".getBytes());
+		//client
+		Socket socket = new Socket("localhost", 10999);
+		Transport transport = new DefaultTransport(socket);
+		transport.send("HELO".getBytes(), false);
+		
+		
+		
+	}
+}

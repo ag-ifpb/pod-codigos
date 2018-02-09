@@ -1,0 +1,4 @@
+release 01/02/2018
+- problemas com duplicação de exibição de mensagens de quem envia
+- bloqueio da listagem de mensagens (somente apresenta se eu mandar uma)
+- manutenção do último ID (se eu desligar o controle já era!)

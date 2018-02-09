@@ -1,0 +1,7 @@
+package ag.protocol.impl;
+
+import ag.protocol.Transport;
+
+public class DefaultTransport implements Transport {
+
+}

@@ -1,0 +1,26 @@
+package ag.threads;
+
+import java.sql.SQLException;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+public class InsertOperation implements Runnable {
+	private final Operation op;
+	
+	public InsertOperation(Operation op) {
+		this.op = op;
+	}
+	
+	public void run() {
+		//como garantir um ID único???
+		try {
+			int id = op.getID();
+			op.increaseID();
+			op.insert(id, "Ari " + id);
+			//notificar
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

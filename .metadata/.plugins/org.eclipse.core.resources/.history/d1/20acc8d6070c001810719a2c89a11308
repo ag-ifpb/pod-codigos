@@ -1,0 +1,57 @@
+package ag.protocol;
+
+/**
+ * Representa o frame de dados que será enviado
+ * ou recebido pelo cliente e servidor.
+ * 
+ * @author arigarcia
+ *
+ */
+public class Frame {
+	private boolean isRequest;
+	private boolean isText;
+	private byte[] payload;
+	
+	public Frame() {
+		isRequest = true;
+		isText = false;
+		payload = new byte[length];
+	}
+	
+	public boolean isRequest() {
+		return isRequest;
+	}
+	
+	public void setTypeAsRequest(){
+		isRequest = true;
+	}
+	
+	public void setTypeAsResponse(){
+		isRequest = false;
+	}
+	
+	public boolean isText() {
+		return isText;
+	}
+	
+	public void setPayloadAsText(){
+		isText = true;
+	}
+	
+	public void setPayloadAsBinary(){
+		isText = false;
+	}
+	
+	public int getLength() {
+		return payload.length;
+	}
+	
+	public byte[] getPayload() {
+		return payload;
+	}
+	
+	public void setPayload(byte[] payload) {
+		this.payload = payload;
+	}
+	
+}

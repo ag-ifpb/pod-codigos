@@ -1,0 +1,13 @@
+package ag.threads;
+
+public class InsertOperation implements Runnable {
+	private final Operation op;
+	
+	public InsertOperation(Operation op) {
+		this.op = op;
+	}
+	
+	public void run() {
+		//op.insert(id, name);
+	}
+}

@@ -1,0 +1,14 @@
+package ag.threads;
+
+public class DeleteOperation implements Runnable {
+	private final Operation op;
+	
+	public DeleteOperation(Operation op) {
+		this.op = op;
+	}
+	
+	public void run() {
+		//como garantir um ID único???
+		//op.insert(id, name);
+	}
+}

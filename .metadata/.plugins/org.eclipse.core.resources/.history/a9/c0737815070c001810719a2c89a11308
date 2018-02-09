@@ -1,0 +1,8 @@
+package ag.protocol;
+
+public class Frame {
+	private boolean isRequest;
+	private boolean isText;
+	private int length;
+	private byte[] payload;
+}

@@ -1,0 +1,6 @@
+package ag.protocol;
+
+public interface Transport {
+	void send(Frame frame);
+	Frame receive();
+}

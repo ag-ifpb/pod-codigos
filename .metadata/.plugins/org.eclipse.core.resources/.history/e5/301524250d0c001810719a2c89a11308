@@ -1,0 +1,14 @@
+package ag.protocol.impl;
+
+import ag.protocol.Frame;
+import ag.protocol.FrameMarshaller;
+
+public class FrameMarshallerImpl implements FrameMarshaller {
+
+	@Override
+	public byte[] marshal(Frame frame) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

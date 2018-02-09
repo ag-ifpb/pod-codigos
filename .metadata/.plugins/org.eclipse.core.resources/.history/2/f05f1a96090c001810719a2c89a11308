@@ -1,0 +1,29 @@
+package ag.protocol.impl;
+
+import java.net.Socket;
+
+import ag.protocol.Frame;
+import ag.protocol.FrameMarshaller;
+import ag.protocol.Transport;
+
+public abstract class DefaultTransport implements Transport {
+	private final Socket socket;
+	private final FrameMarshaller marshaller;
+	
+	public DefaultTransport(Socket socket) {
+		this.socket = socket;
+	}
+	
+	@Override
+	public void send(Frame frame) {
+		byte[] f = marshaller.marshal(frame);
+		socket.write(f);
+	}
+
+	@Override
+	public Frame receive() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

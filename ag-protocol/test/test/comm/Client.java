@@ -1,26 +1,29 @@
 package test.comm;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import ag.protocol.Frame;
 import ag.protocol.Transport;
 import ag.protocol.impl.DefaultTransport;
-import ag.protocol.util.Util;
 
-public class Client {
+public class Client extends AbstractRunnable{
 
-	public static void main(String[] args) throws UnknownHostException, IOException {
+	protected void runWithException() throws IOException {
 		//client
 		Socket socket = new Socket("localhost", 10999);
 		Transport transport = new DefaultTransport(socket);
-		Frame frame = transport.send("HELO".getBytes(), false);
+		Frame frameReq = transport.send(1, "HELO".getBytes(), false, true);
+		Frame frameResp = transport.receive();
 		//
-		System.out.println("-------- FRAME ----------");
-		System.out.println("IsReq:        \t" + frame.isRequest());
-		System.out.println("IsText:       \t" + frame.isText());
-		System.out.println("Length:       \t" + frame.getLength());
-		System.out.println("Content:      \t" + new String(frame.getPayload()));
+		System.out.println("Request...");
+		frameReq.dump();
+		System.out.println("Response...");
+		frameResp.dump();
 	}
+	
+	public static void main(String[] args) {
+		Client client = new Client();
+		client.run();
+	}
+
 }

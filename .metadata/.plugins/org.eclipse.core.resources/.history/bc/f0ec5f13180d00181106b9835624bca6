@@ -1,0 +1,34 @@
+package ag.threads;
+
+import java.sql.SQLException;
+
+public class DeleteOperation implements Runnable {
+	private final Operation op;
+	private final Thread t1;
+	private final BlockingChannel channel;
+	
+	public DeleteOperation(Operation op, Thread t1, BlockingChannel channel) {
+		this.op = op;
+		this.t1 = t1;
+		this.channel = channel;
+	}
+	
+	public void run() {
+		//como garantir um ID único???
+		try {
+			//aguardar a atualização
+			synchronized (t1) {
+				t1.wait();
+			}
+			//operar
+			int id = op.getID();
+			op.delete(id);
+			//
+			channel.unlock();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}

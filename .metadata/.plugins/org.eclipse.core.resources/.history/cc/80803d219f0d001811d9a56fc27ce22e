@@ -1,0 +1,15 @@
+import ag.protocol.Frame;
+import ag.protocol.Transport;
+import ag.protocol.impl.DefaultTransport;
+
+public class TransportTest {
+
+	public static void main(String[] args) {
+		//
+		Frame frame = new Frame();//01
+		frame.setPayload("HELO GUYS".getBytes());
+		//client
+		Socket socket = new Socket(10999);
+		Transport transport = new DefaultTransport(socket);
+	}
+}

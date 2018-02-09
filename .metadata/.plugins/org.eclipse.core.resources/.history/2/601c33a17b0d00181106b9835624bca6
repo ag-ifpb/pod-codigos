@@ -1,0 +1,43 @@
+package ag.threads;
+
+public class BlockingQueue {
+	private int currentIndex = -1;
+	private Object[] locks;
+	
+	private void init(int c){
+		for (int i = 0; i < c; i++) {
+			locks[i] = new Object();
+		} 
+	}
+	
+	public BlockingQueue(int capacity) {
+		locks = new Object[capacity];
+		init(capacity);
+	}
+	
+	public void stop() throws InterruptedException{
+		synchronized (locks) {
+			if (currentIndex+1 < locks.length){
+				Object l = locks[++currentIndex];
+				synchronized (l) {
+					l.wait();
+				}
+			} else {
+				wait();
+			}
+		}
+	}
+	
+	public void release(){
+		synchronized (locks) {
+			if (currentIndex > -1){
+				Object l = locks[currentIndex--];
+				synchronized (l) {
+					l.notify();
+				}
+			} else {
+				notify();
+			}
+		}
+	}
+}

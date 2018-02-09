@@ -12,7 +12,7 @@ public class FrameMarshallerImpl implements FrameMarshaller {
 	public byte[] marshal(Frame frame) {
 		//colocar o valor no primeiro bit do byte
 		int first = 0x00;
-		if (!frame.isRequest()){//0 - req e 1 - resp
+		if (!frame.isReq()){//0 - req e 1 - resp
 			first = 0x80; // 1000 0000
 		}
 		//colocar o valor no segundo bit do byte
@@ -26,11 +26,13 @@ public class FrameMarshallerImpl implements FrameMarshaller {
 		int length = frame.getLength();
 		length = (first << 8) | (length << 4);
 		//armazenar no buffer
-		ByteBuffer buffer = ByteBuffer.allocate(frame.getLength()+4);
+		int capacity = frame.getLength()+8;
+		ByteBuffer buffer = ByteBuffer.allocate(capacity);
 		buffer.putInt(length);
 		buffer.put(frame.getPayload());
+		buffer.putInt(frame.getIdentiy());
 		//retirar os bytes adicionados pelo tipo inteiro
-		return Arrays.copyOfRange(buffer.array(), 2, frame.getLength()+4);
+		return Arrays.copyOfRange(buffer.array(), 2, capacity);
 	}
 
 }

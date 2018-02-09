@@ -1,0 +1,18 @@
+package ag.threads;
+
+public class Semaphore {
+	private int currentIndex = 0;
+	private final Object[] locks = new Object[2];
+	
+	public void stop() throws InterruptedException{
+		synchronized (locks) {
+			locks[currentIndex++].wait();
+		}
+	}
+	
+	public void release(){
+		synchronized (lock) {
+			lock.notify();
+		}
+	}
+}

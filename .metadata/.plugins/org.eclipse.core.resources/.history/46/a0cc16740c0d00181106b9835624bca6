@@ -1,0 +1,7 @@
+package ag.threads;
+
+import java.util.concurrent.BlockingQueue;
+
+public class BlockingChannel implements BlockingQueue<E> {
+
+}
