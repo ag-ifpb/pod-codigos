@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+import javax.persistence.Entity;
+import javax.persistence.PersistenceContext;
+
 import org.w3c.dom.css.CSS2Properties;
 
 import com.google.gson.JsonElement;
@@ -15,6 +18,9 @@ import com.pubnub.api.models.consumer.PNStatus;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 
+// org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor.process
+
+@PersistenceContext
 public class Main {
 	
 	private static void subscriber(PubNub pubnub){

@@ -86,6 +86,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-threads"/>
 			<item value="/Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-ifpb-security"/>
 			<item value="/Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-sharedrepository-node1"/>
 			<item value="/Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-sharedrepository-shared/pom.xml"/>
@@ -102,6 +103,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="ag.threads.ag_threads_with_pg"/>
 			<item value="ag.jna.samples"/>
 			<item value="ifpb"/>
 			<item value="ag.springcoloud"/>
@@ -109,6 +111,7 @@
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="groupId">
+			<item value="ag.threads"/>
 			<item value="ag.jna.samples"/>
 			<item value="ag-30mi-inserts"/>
 			<item value="ag-springcoloud"/>
@@ -116,6 +119,7 @@
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="artifactId">
+			<item value="ag-threads-with-pg"/>
 			<item value="ag-jna-samples"/>
 			<item value="ag-30mi-inserts"/>
 			<item value="ag-springcoloud"/>

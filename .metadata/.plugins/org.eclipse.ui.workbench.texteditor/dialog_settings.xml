@@ -8,13 +8,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="response"/>
+			<item value="Discipl"/>
 			<item value="native "/>
 			<item value="nati"/>
 			<item value="&quot;"/>
 			<item value="isFull"/>
 			<item value="8"/>
 			<item value="7"/>
-			<item value="3"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&apos;"/>

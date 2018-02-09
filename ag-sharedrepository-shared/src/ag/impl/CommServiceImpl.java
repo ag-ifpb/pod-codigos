@@ -8,6 +8,12 @@ import ag.Message;
 import ag.MessageManager;
 import ag.RepositoryLocator;
 
+/**
+ * Representa o Gerenciador de Acesso aos Arquivos
+ * 
+ * @author arigarcia
+ *
+ */
 public class CommServiceImpl implements CommService {
 	public static final String FUNC_NAME = "hello()";//'./'
 	public static final String MSG_REQ_TYPE = "msgReq";//req.txt

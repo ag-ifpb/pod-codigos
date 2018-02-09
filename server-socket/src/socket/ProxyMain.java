@@ -5,22 +5,30 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 public class ProxyMain {
+private static Logger logger = Logger.getLogger("AGDebug");
 	
 	private static String client(byte[] brcv) throws IOException{
+		//log
+		logger.info("open connection, bind (my ip = 0.0.0.0/0), list on 10998");
 		//opening connection in port 10998, localhost
 		Socket socket = new Socket("localhost", 10998);
 		//start communication
 		InputStream inputStream = socket.getInputStream();//receive
 		OutputStream outputStream = socket.getOutputStream();//send
-		//send 
+		//log
+		logger.info("send to server by proxy: " + new String(brcv));
+		//send
 		outputStream.write(brcv);
 		//receive response
 		byte[] b = new byte[1024];
 		inputStream.read(b);
 		//close connection
 		socket.close();
+		//log
+		logger.info("received from proxy: " + new String(b));
 		//
 		return new String(b);
 	}
@@ -48,6 +56,8 @@ public class ProxyMain {
 	}
 
 	public static void main(String[] args) throws IOException {
+		//log
+		logger.info("starting proxy on bind (my ip = 0.0.0.0/0), list on 10999");
 		server();
 	}
 }

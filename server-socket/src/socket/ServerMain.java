@@ -1,45 +1,42 @@
 package socket;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Logger;
 
+//192.168.1.105
 public class ServerMain {
 	private static Logger logger = Logger.getLogger("AGDebug");
 	
 	public static void main(String[] args) throws IOException {
-		//log
-		logger.info("open connection, bind to 10998");
+		//log 
+		logger.info("open connection, bind (my ip = 0.0.0.0/0), list on 10998");
 		//open connection, bind to 10998
-		//192.168.1.105
 		ServerSocket serverSocket = new ServerSocket(10998);
 		//log
-		logger.info("listener, waiting connection");
+		logger.info("waiting connection");
 		//listener, waiting connection
 		Socket socket = serverSocket.accept();//block
 		//log
 		logger.info("get input, and output stream");
 		//input --> receive / output --> send
-		InputStream inputStream = socket.getInputStream();
-		OutputStream outputStream = socket.getOutputStream();
+		DataInputStream inputStream = new DataInputStream(
+				socket.getInputStream());
+		DataOutputStream outputStream = new DataOutputStream(
+				socket.getOutputStream());
 		//log
-		logger.info("read 4 bytes in stream");
-		//byte array (stream)
-		byte[] b = new byte[1024];
+		logger.info("read string in stream");
 		//read/receive
-		inputStream.read(b);
+		String reqData = inputStream.readUTF();
 		//log
-		logger.info("write 2 bytes in stream");
+		logger.info("--------> Requested: " + reqData);
+		//log
+		logger.info("write string in stream");
 		//write/send
-		String resp = new String(b).trim();
-		if ("HELO".equals(resp)){
-			outputStream.write("OK".getBytes());
-		} else {
-			outputStream.write("ER".getBytes());
-		}
+		outputStream.writeUTF(reqData + ", Ari");
 		//log
 		logger.info("close client connection");
 		//closing
