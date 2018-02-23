@@ -1,0 +1,22 @@
+package ag.threads;
+
+public class Volatile {
+	private boolean suspend = false;
+	private Object lock = new Object();
+	
+	public boolean getSuspend(){
+		synchronized (lock) {
+			return suspend;
+		}
+	}
+	
+	public void markAsSuspend() {
+		synchronized (lock) {
+			this.suspend = true;
+		}
+	}
+	
+	public void markAsUnsuspend() {
+		this.suspend = false;
+	}
+}

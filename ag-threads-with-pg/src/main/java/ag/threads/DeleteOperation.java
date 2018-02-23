@@ -7,17 +7,25 @@ public class DeleteOperation implements Runnable {
 	private final Operation op;
 	private final BlockingQueue monitor;
 	private final BlockingChannel channel;
+	private final Volatile vol;
 	
-	public DeleteOperation(int id, Operation op, BlockingQueue se, BlockingChannel channel) {
+	public DeleteOperation(int id, Operation op, Volatile vol, BlockingQueue se, BlockingChannel channel) {
 		this.op = op;
 		this.monitor = se;
 		this.channel = channel;
 		this.id = id;
+		this.vol =  vol;
 	}
 	
 	public void run() {
 		//como garantir um ID único???
 		try {
+			if (vol.getSuspend()){
+				synchronized (vol) {
+					vol.wait();
+				}
+				System.out.println("supending delete");
+			}
 			//aguardar a atualização
 			System.out.println("7:aguarando t1");
 			monitor.attend();

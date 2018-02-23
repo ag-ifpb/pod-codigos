@@ -22,19 +22,30 @@ public class App {
 		BlockingChannel channel = new BlockingChannel();
 		BlockingQueue monitor0 = new BlockingQueue(1);//0 to 1
 		BlockingQueue monitor1 = new BlockingQueue(1);//1 to 2
+		//
+		Volatile vol = new Volatile();
 		//threads
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 1000; i++) {
 			//bloqueia se já tiver em uso
 			System.out.println("0:bloqueado");
 			channel.lock();//<-- por que?
 			int id = i;
 			System.out.println("1:desbloqueado");
-			Thread t0 = new Thread(new InsertOperation(id, op, monitor0));
-			Thread t1 = new Thread(new UpdateOperation(id, op, monitor0, monitor1));
-			Thread t2 = new Thread(new DeleteOperation(id, op, monitor1, channel));
+			Thread t0 = new Thread(new InsertOperation(id, op, vol, monitor0));
+			Thread t1 = new Thread(new UpdateOperation(id, op, vol, monitor0, monitor1));
+			Thread t2 = new Thread(new DeleteOperation(id, op, vol, monitor1, channel));
 			t0.start();
 			t1.start();
 			t2.start();
+			//
+			if (Math.random() > 0.7) {
+				vol.markAsSuspend();
+				System.out.println("parando...");
+				Thread.sleep(3000);
+				vol.markAsUnsuspend(vol);
+				System.out.println("voltando...");
+			}
 		}
+		
 	}
 }

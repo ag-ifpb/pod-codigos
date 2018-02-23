@@ -1,5 +1,0 @@
-package ag.threads;
-
-public interface OperationRunnable extends Runnable {
-
-}

@@ -1,8 +1,0 @@
-package ag.protocol;
-
-import java.io.IOException;
-
-public interface Transport {
-	void send(byte[] content) throws IOException;
-	byte[] receive() throws IOException;
-}

@@ -6,16 +6,24 @@ public class InsertOperation implements Runnable {
 	private final int id;
 	private final Operation op;
 	private final BlockingQueue monitor;
+	private final Volatile vol;
 	
-	public InsertOperation(int id, Operation op, BlockingQueue se) {
+	public InsertOperation(int id, Operation op, Volatile vol, BlockingQueue se) {
 		this.op = op;
 		this.monitor = se;
 		this.id = id;
+		this.vol = vol;
 	}
 	
 	public void run() {
 		//como garantir um ID único???
 		try {
+			if (vol.getSuspend()){
+				synchronized (vol) {
+					vol.wait();
+				}
+				System.out.println("supending insert");
+			}
 			//operar
 			op.insert(id, "Ari " + id);
 			System.out.println("2:inserindo " + id);

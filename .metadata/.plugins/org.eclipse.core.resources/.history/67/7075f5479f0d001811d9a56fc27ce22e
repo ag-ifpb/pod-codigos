@@ -1,8 +1,0 @@
-package ag.protocol;
-
-import java.io.IOException;
-
-public interface Transport {
-	void send(Frame frame) throws IOException;
-	Frame receive() throws IOException;
-}

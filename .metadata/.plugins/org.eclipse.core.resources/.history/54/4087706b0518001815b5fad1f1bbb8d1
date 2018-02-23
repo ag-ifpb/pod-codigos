@@ -1,0 +1,13 @@
+package ag.threads;
+
+public class Volatile {
+	private boolean suspend;
+	
+	public boolean getSuspend(){
+		return suspend;
+	}
+	
+	public void setSuspend(boolean suspend) {
+		this.suspend = suspend;
+	}
+}

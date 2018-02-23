@@ -1,9 +1,0 @@
-package ag.threads.ag_threads_with_pg;
-
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
-
-public class AppTest extends TestCase {
-}

@@ -7,17 +7,25 @@ public class UpdateOperation implements Runnable {
 	private final Operation op;
 	private final BlockingQueue monitor0;
 	private final BlockingQueue monitor1;
+	private final Volatile vol;
 	
-	public UpdateOperation(int id, Operation op, BlockingQueue m0, BlockingQueue m1) {
+	public UpdateOperation(int id, Operation op, Volatile vol, BlockingQueue m0, BlockingQueue m1) {
 		this.op = op;
 		this.monitor0 = m0;
 		this.monitor1 = m1;
 		this.id = id;
+		this.vol = vol;
 	}
 	
 	public void run() {
 		//como garantir um ID único???
 		try {
+			if (vol.getSuspend()){
+				synchronized (vol) {
+					vol.wait();
+				}
+				System.out.println("supending update");
+			}
 			//aguardar a inserção
 			System.out.println("4:aguardando t0");
 			monitor0.attend();

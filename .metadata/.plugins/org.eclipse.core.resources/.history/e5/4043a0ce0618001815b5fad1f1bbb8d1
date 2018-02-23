@@ -1,0 +1,17 @@
+package ag.threads;
+
+public class Volatile {
+	private boolean suspend = false;
+	
+	public boolean getSuspend(){
+		return suspend;
+	}
+	
+	public void markAsSuspend() {
+		this.suspend = true;
+	}
+	
+	public void markAsUnsuspend() {
+		this.suspend = false;
+	}
+}

@@ -1,5 +1,0 @@
-package ag.protocol;
-
-public interface FrameMarshaller {
-	byte[] marshall(Frame frame);
-}
