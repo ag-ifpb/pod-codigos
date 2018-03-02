@@ -50,6 +50,7 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="ag-messenger"/>
 			<item value="ag-simple-pglistener"/>
 			<item value="ag-simple-eventbus-shared"/>
 			<item value="ag-simple-eventbus"/>
@@ -67,6 +68,7 @@
 			<item value="IFPB EncryptDecrypt Toy"/>
 		</list>
 		<list key="artifactId">
+			<item value="ag-messenger"/>
 			<item value="ag-simple-pglistener"/>
 			<item value="ag-simple-eventbus-shared"/>
 			<item value="ag-simple-eventbus"/>

@@ -1,0 +1,10 @@
+package ifpb;
+
+import java.io.Serializable;
+
+public class RemoteRef implements Serializable{
+	private String host;
+	private int port;
+	
+	
+}
