@@ -12124,3 +12124,144 @@ org.eclipse.core.runtime.CoreException: Launch configuration MessageManagerTest.
 2018-03-02 10:01:14,573 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-03-02 10:01:14,573 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-threads-with-pg/src/test/resources
 2018-03-02 10:11:12,384 [Takari usage stats reporter] INFO  i.t.s.m.i.UsageStatsActivator - Reporting usage stats url=https://stats.takari.io/stats, body={"java.version":"1.8.0_131","java.vendor":"Oracle Corporation","os.name":"Mac OS X","os.arch":"x86_64","os.version":"10.12.3","eclipse.product":"org.eclipse.epp.package.jee.product","eclipse.buildId":"4.5.2.M20160212-1500","projectCount":5,"bundles":[{"symbolicName":"org.eclipse.osgi","version":"3.10.102.v20160118-1700"},{"symbolicName":"io.takari.stats.m2e","version":"0.1.0.201506181201"},{"symbolicName":"org.eclipse.m2e.core","version":"1.7.0.20160603-1933"}],"mavenPlugins":{"org.apache.maven.plugins:maven-clean-plugin:2.5:clean":[],"org.apache.maven.plugins:maven-compiler-plugin:3.1:compile":["configurator"],"org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile":["configurator"],"org.apache.maven.plugins:maven-compiler-plugin:3.5.1:compile":["configurator"],"org.apache.maven.plugins:maven-compiler-plugin:3.5.1:testCompile":["configurator"],"org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy":[],"org.apache.maven.plugins:maven-install-plugin:2.4:install":[],"org.apache.maven.plugins:maven-jar-plugin:2.4:jar":["configurator"],"org.apache.maven.plugins:maven-resources-plugin:2.6:resources":["execute"],"org.apache.maven.plugins:maven-resources-plugin:2.6:testResources":["execute"],"org.apache.maven.plugins:maven-site-plugin:3.3:site":[],"org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test":[]}}
+2018-03-04 08:23:52,891 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-03-04 08:23:52,904 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-messenger/src/main/resources
+2018-03-04 08:23:52,907 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-03-04 08:23:52,908 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-messenger/src/test/resources
+2018-03-04 08:23:53,383 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-04 08:23:53,383 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-threads-with-pg/src/main/resources
+2018-03-04 08:23:53,385 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-04 08:23:53,386 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-threads-with-pg/src/test/resources
+2018-03-05 11:18:30,425 [Worker-357] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: request-reply:request-reply:1.0 @ /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/pom.xml.
+2018-03-05 11:18:31,508 [Worker-357] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/json/json/20180130/json-20180130.pom
+2018-03-05 11:18:31,628 [Worker-357] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/json/json/20180130/json-20180130.pom
+2018-03-05 11:18:31,731 [Worker-357] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/json/json/20180130/json-20180130.jar
+2018-03-05 11:18:32,024 [Worker-357] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/json/json/20180130/json-20180130.jar
+2018-03-05 11:18:32,385 [Worker-357] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /request-reply/src/main/java
+2018-03-05 11:18:32,387 [Worker-357] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /request-reply/src/test/java
+2018-03-05 11:18:32,503 [Worker-357] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2018-03-05 11:18:32,991 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:18:32,991 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:18:32,993 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:18:32,993 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 11:21:42,952 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:21:42,953 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:21:42,954 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:21:42,954 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 11:21:51,386 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:21:51,386 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:21:51,387 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:21:51,388 [Worker-361] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 11:23:28,538 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:23:28,538 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:23:28,540 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:23:28,541 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 11:24:47,731 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:24:47,734 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:24:47,738 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:24:47,738 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 11:26:34,103 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:26:34,103 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 11:26:34,105 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 11:26:34,105 [Worker-362] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:19:25,848 [Worker-384] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:19:25,849 [Worker-384] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:19:25,850 [Worker-384] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:19:25,851 [Worker-384] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:35:34,123 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:35:34,123 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:35:34,125 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:35:34,126 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:35:52,356 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:35:52,357 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:35:52,359 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:35:52,360 [Worker-390] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:36:44,158 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:36:44,158 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:36:44,159 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:36:44,160 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:37:00,789 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:00,790 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:37:00,791 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:00,791 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:37:34,440 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:34,440 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:37:34,441 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:34,441 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:37:37,460 [Worker-393] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:37,461 [Worker-393] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:37:37,462 [Worker-393] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:37,463 [Worker-393] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:37:44,841 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:44,841 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:37:44,844 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:37:44,844 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:38:04,365 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:38:04,365 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:38:04,367 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:38:04,367 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:39:03,854 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:03,854 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:39:03,860 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:03,860 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:39:35,961 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:35,961 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:39:35,962 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:35,962 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:39:59,441 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:59,442 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:39:59,443 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:39:59,443 [Worker-394] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:41:17,981 [Worker-391] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:41:17,982 [Worker-391] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:41:17,983 [Worker-391] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:41:17,983 [Worker-391] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:41:29,751 [Worker-392] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:41:29,751 [Worker-392] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:41:29,753 [Worker-392] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:41:29,753 [Worker-392] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-05 12:56:29,763 [Worker-396] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:56:29,763 [Worker-396] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-05 12:56:29,764 [Worker-396] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-05 12:56:29,764 [Worker-396] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-07 09:50:25,228 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:50:25,231 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/main/resources
+2018-03-07 09:50:25,234 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:50:25,235 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.sd/tmp/request-reply-protocol/src/test/resources
+2018-03-07 09:51:15,489 [Worker-19] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/pom.xml
+2018-03-07 09:51:16,378 [Worker-19] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ag.ifpb:ag-chat-rmi:0.0.1-SNAPSHOT @ /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/pom.xml.
+2018-03-07 09:51:16,717 [Worker-19] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ag-chat-rmi/src/main/java
+2018-03-07 09:51:16,719 [Worker-19] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ag-chat-rmi/src/test/java
+2018-03-07 09:51:16,837 [Worker-19] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2018-03-07 09:51:17,246 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:51:17,247 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 09:51:17,248 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:51:17,248 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 09:57:11,233 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:57:11,233 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 09:57:11,234 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:57:11,234 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 09:57:52,419 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:57:52,419 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 09:57:52,420 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 09:57:52,421 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 10:00:50,961 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:00:50,961 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 10:00:50,963 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:00:50,963 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 10:02:58,756 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:02:58,756 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 10:02:58,758 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:02:58,758 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 10:07:31,393 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:07:31,393 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 10:07:31,396 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:07:31,396 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 10:26:12,269 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:26:12,269 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 10:26:12,272 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 10:26:12,272 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources
+2018-03-07 11:07:05,941 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 11:07:05,942 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/main/resources
+2018-03-07 11:07:05,943 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-03-07 11:07:05,943 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Volumes/MacintoshHDExt/ari.aula/ifpb.pod/workspace/ag-chat-rmi/src/test/resources

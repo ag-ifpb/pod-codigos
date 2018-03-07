@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="ag.messenger.model.SharedRepository"/>
-<fullyQualifiedTypeName name="ag.messenger.infra.SharedRepositoryImpl"/>
-<fullyQualifiedTypeName name="ag.messenger.app.MessengerImpl"/>
-<fullyQualifiedTypeName name="ag.messenger.model.Messenger"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="ag.messenger.model.Message"/>
-<fullyQualifiedTypeName name="java.lang.Runtime"/>
-<fullyQualifiedTypeName name="ag.protocol.Transport"/>
-<fullyQualifiedTypeName name="java.net.Socket"/>
 <fullyQualifiedTypeName name="ag.protocol.FrameMarshaller"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="ag.protocol.FrameUnmarshaller"/>
 <fullyQualifiedTypeName name="ag.protocol.impl.FrameMarshallerImpl"/>
 <fullyQualifiedTypeName name="java.nio.Buffer"/>
@@ -59,5 +46,18 @@
 <fullyQualifiedTypeName name="ifpb.Hello"/>
 <fullyQualifiedTypeName name="ag.RPCTest"/>
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.rmi.server.RemoteRef"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlType"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.xml.bind.JAXB"/>
+<fullyQualifiedTypeName name="ifpb.RemoteRef"/>
+<fullyQualifiedTypeName name="ifpb.Message"/>
+<fullyQualifiedTypeName name="java.lang.UnknownError"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+<fullyQualifiedTypeName name="java.net.InetAddress"/>
+<fullyQualifiedTypeName name="request.reply.Message"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>
