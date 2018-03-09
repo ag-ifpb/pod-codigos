@@ -118,6 +118,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="ag.ifpb.chat.rmi"/>
 			<item value="ag.threads.ag_threads_with_pg"/>
 			<item value="ag.jna.samples"/>
 			<item value="ifpb"/>
@@ -126,6 +127,7 @@
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="groupId">
+			<item value="ag.ifpb"/>
 			<item value="ag.threads"/>
 			<item value="ag.jna.samples"/>
 			<item value="ag-30mi-inserts"/>
@@ -134,6 +136,7 @@
 			<item value="ag.ifpb.rmi.indocker"/>
 		</list>
 		<list key="artifactId">
+			<item value="ag-chat-rmi"/>
 			<item value="ag-threads-with-pg"/>
 			<item value="ag-jna-samples"/>
 			<item value="ag-30mi-inserts"/>

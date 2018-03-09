@@ -1,0 +1,33 @@
+package ag.ifpb.chat.rmi.client;
+
+import java.awt.Scrollbar;
+import java.util.Scanner;
+
+public class App {
+	
+	public static void main(String[] args) {
+		//declarações de variáveis
+		Scanner scanner = new Scanner(System.in);
+		//solicitar o usuário que digite o seu email
+		System.out.println("Por favor, digite um email:");
+		String email = scanner.nextLine();
+		//fazer login no server
+		RMIChatService service = new RMIChatServiceMock();
+		String token = service.login(email);
+		//em looping
+		while(true){
+			//envio
+			System.out.print("[eu]:");
+			String textOut = scanner.nextLine();
+			service.sendMessage(token, textOut);
+			//recebimento
+			String[] textsIn = service.receiveMessage(token);
+			System.out.println(String.format("[%s]: %s", textsIn[0], textsIn[1]));
+		}
+		//em paralelo:
+		//	-aguardando o recebimento de mensagens
+		//	---- caso ele receba uma mensagem, esta será impressa na tela
+		//  -aguardando que o usuário digite uma mensagem
+		//	---- 
+	}
+}

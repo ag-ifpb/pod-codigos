@@ -1,0 +1,17 @@
+package ag.ifpb.chat.rmi.client;
+
+
+public class App {
+	
+	public static void main(String[] args) {
+		//solicitar o usuário que digite o seu email
+		//fazer login no server
+		RMIChatService service;
+		String token = service.login(email);
+		//em paralelo:
+		//	-aguardando o recebimento de mensagens
+		//	---- caso ele receba uma mensagem, esta será impressa na tela
+		//  -aguardando que o usuário digite uma mensagem
+		//	---- 
+	}
+}

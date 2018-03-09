@@ -1,0 +1,5 @@
+package ag.ifpb.chat.rmi.client;
+
+public interface RMIChatService {
+	String login(String email);
+}
