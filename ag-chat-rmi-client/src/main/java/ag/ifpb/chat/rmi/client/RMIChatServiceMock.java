@@ -1,5 +1,7 @@
 package ag.ifpb.chat.rmi.client;
 
+import ag.ifpb.chat.rmi.share.RMIChatService;
+
 public class RMIChatServiceMock implements RMIChatService{
 	private String currentMessage;
 	private String currentUser;

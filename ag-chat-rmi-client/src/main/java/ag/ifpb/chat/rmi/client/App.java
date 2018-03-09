@@ -3,6 +3,8 @@ package ag.ifpb.chat.rmi.client;
 import java.io.IOException;
 import java.util.Scanner;
 
+import ag.ifpb.chat.rmi.share.RMIChatService;
+
 public class App {
 	private static Object consoleLock = new Object();
 	

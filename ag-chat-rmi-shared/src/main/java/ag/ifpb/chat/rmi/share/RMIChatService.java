@@ -1,6 +1,9 @@
-package ag.ifpb.chat.rmi.client;
+package ag.ifpb.chat.rmi.share;
 
-public interface RMIChatService {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface RMIChatService extends Remote {
 	
 	/**
 	 * Faz o login no server e retorna o token da sessão
@@ -8,7 +11,7 @@ public interface RMIChatService {
 	 * @param email
 	 * @return
 	 */
-	String login(String email);
+	String login(String email) throws RemoteException;
 	
 	
 	/**
@@ -18,7 +21,7 @@ public interface RMIChatService {
 	 * @param token
 	 * @param text
 	 */
-	void sendMessage(String token, String text);
+	void sendMessage(String token, String text) throws RemoteException;
 	
 	/**
 	 * Receber uma mensagem a partir a identificação da sessão do usuário
@@ -27,6 +30,6 @@ public interface RMIChatService {
 	 * @return um vetor contendo o email do usuário e o texto da mensagem, 
 	 * nesta sequência
 	 */
-	String[] receiveMessage(String token);
+	String[] receiveMessage(String token) throws RemoteException;
 	
 }

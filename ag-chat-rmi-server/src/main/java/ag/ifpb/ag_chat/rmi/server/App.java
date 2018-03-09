@@ -1,4 +1,4 @@
-package ag.ifpb.chat.rmi;
+package ag.ifpb.ag_chat.rmi.server;
 
 /**
  * Hello world!
