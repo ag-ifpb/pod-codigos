@@ -1,6 +1,7 @@
 package ag.ifpb.chat.rmi.client;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.Scanner;
 
 import ag.ifpb.chat.rmi.share.RMIChatService;
@@ -23,7 +24,11 @@ public class App {
 			while(true){
 				System.out.print("[eu]: ");
 				String textOut = scanner.nextLine();
-				service.sendMessage(token, textOut);
+				try {
+					service.sendMessage(token, textOut);
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
@@ -40,10 +45,15 @@ public class App {
 		public void run() {
 			while(true){
 				//recebimento
-				String[] textsIn = service.receiveMessage(token);
-				if (textsIn[0] != null && textsIn[1] != null){
-					System.out.println(String.format("[%s]: %s", textsIn[0], textsIn[1]));
+				try {
+					String[] textsIn = service.receiveMessage(token);
+					if (textsIn[0] != null && textsIn[1] != null){
+						System.out.println(String.format("[%s]: %s", textsIn[0], textsIn[1]));
+					}
+				} catch (RemoteException e) {
+					e.printStackTrace();
 				}
+				
 			}
 		}
 	}

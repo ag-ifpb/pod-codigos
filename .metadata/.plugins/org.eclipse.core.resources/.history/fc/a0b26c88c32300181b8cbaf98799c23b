@@ -1,0 +1,7 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+import junit.framework.TestCase;
+
+public class RMIChatServiceImplTest extends TestCase {
+
+}

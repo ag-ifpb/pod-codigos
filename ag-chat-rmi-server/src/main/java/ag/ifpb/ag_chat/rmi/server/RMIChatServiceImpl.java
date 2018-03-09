@@ -11,24 +11,35 @@ import ag.ifpb.chat.rmi.share.RMIChatService;
 import ag.ifpb.chat.rmi.share.Session;
 
 @SuppressWarnings(value = "serial")
-public class RMIChatServiceImpl extends UnicastRemoteObject implements RMIChatService {
+public class RMIChatServiceImpl implements RMIChatService {
 	private final ChatServer chatServer;
 	private final List<Session> sessions = new ArrayList<Session>();
 
-	protected RMIChatServiceImpl(ChatServer server) throws RemoteException {
+	private void saveSession(Session s){
+		sessions.add(s);
+	}
+	
+	protected RMIChatServiceImpl(ChatServer server) {
 		this.chatServer = server;
 	}
 
 	public String login(String email) throws RemoteException{
 		Session session = chatServer.login(email);
-		return session.getToken();
+		//
+		saveSession(session);//TODO: criar a sessão no banco de dados
+		//
+		if (session != null){
+			return session.getToken();
+		} else {
+			return null;
+		}
 	}
 
 	public void sendMessage(String token, String text) throws RemoteException{
 		//
 		String user = null;
 		for (Session session : sessions) {
-			if (session.getToken().equals(token)){
+			if (session.getToken().equalsIgnoreCase(token)){
 				user = session.getUser();
 			}
 		}

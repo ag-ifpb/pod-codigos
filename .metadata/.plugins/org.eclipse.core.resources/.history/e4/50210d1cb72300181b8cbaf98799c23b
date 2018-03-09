@@ -1,0 +1,22 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+import ag.ifpb.chat.rmi.share.RMIChatService;
+
+public class RMIChatServiceImpl implements RMIChatService {
+
+	public String login(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void sendMessage(String token, String text) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public String[] receiveMessage(String token) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

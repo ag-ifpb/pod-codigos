@@ -1,0 +1,30 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+import java.rmi.RemoteException;
+
+import ag.ifpb.chat.rmi.share.ChatServer;
+import ag.ifpb.chat.rmi.share.RMIChatService;
+import junit.framework.TestCase;
+
+public class RMIChatServiceImplTest extends TestCase {
+	ChatServer server = new ChatServerImpl();
+	RMIChatService service = new RMIChatServiceImpl(server);
+
+	private String login() throws RemoteException{
+		String token = service.login("aristofanio@hotmail.com");
+		assertNotNull(token);
+		return token;
+	}
+	
+	private void sendMsg(String token, String message) throws RemoteException {
+		service.sendMessage(token, message);
+	}
+	
+	public void test() throws RemoteException{
+		String tk = login();
+		sendMsg(tk, "Hello");
+	}
+	
+	
+	
+}

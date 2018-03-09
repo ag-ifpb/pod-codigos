@@ -1,0 +1,86 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import ag.ifpb.chat.rmi.share.ChatServer;
+import ag.ifpb.chat.rmi.share.Message;
+import ag.ifpb.chat.rmi.share.Session;
+
+public class ChatServerImpl implements ChatServer {
+
+	private void insert(Connection conn, String email) {
+		try {
+			String sql = "inset into  userConection (email,is_remove) values(?,?) WHERE email=?";
+			//
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, email);
+			statement.setBoolean(2, true);
+			statement.executeUpdate();
+			//
+		} catch (SQLException ex) {
+			Logger.getLogger(ChatServerImpl.class.getName()).log(Level.SEVERE, null, ex);
+		} finally {
+			try {
+				Connector.close();
+			} catch (SQLException ex) {
+				Logger.getLogger(ChatServerImpl.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+		return;
+
+	}
+
+	public Session login(String email) {
+		Connection conn = Connector.init();
+		try {
+			String sql = "delete userConection WHERE email=?";
+			//
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, email);
+			statement.executeUpdate();
+			insert(conn, email);
+			//
+		} catch (SQLException ex) {
+			Logger.getLogger(ChatServerImpl.class.getName()).log(Level.SEVERE, null, ex);
+		} finally {
+			try {
+				Connector.close();
+			} catch (SQLException ex) {
+				Logger.getLogger(ChatServerImpl.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+		return null;
+	}
+
+	public void persistAndforwardToAll(Message msg) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void remove(Message msg) {
+		Connection conn = Connector.init();
+        try {
+          String sql = "UPDATE mensagem SET is_remove=true WHERE id=?";
+          //
+          PreparedStatement statement = conn.prepareStatement(sql);
+          statement.setLong(1, msg.getID());
+          statement.executeUpdate();
+          //
+      } catch (SQLException ex) {
+          Logger.getLogger(Mensagem.class.getName()).log(Level.SEVERE, null, ex);
+      }
+       finally{
+    	   try {
+				Connector.close();
+			} catch (SQLException ex) {
+				Logger.getLogger(ChatServerImpl.class.getName()).log(Level.SEVERE, null, ex);
+			}
+      }
+
+	}
+
+}

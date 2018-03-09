@@ -1,0 +1,30 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import ag.ifpb.chat.rmi.share.RMIChatService;
+
+@SuppressWarnings(value = "serial")
+public class RMIChatServiceImpl extends UnicastRemoteObject implements RMIChatService {
+
+	protected RMIChatServiceImpl() throws RemoteException {
+		super();
+	}
+
+	public String login(String email) throws RemoteException{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void sendMessage(String token, String text) throws RemoteException{
+		// TODO Auto-generated method stub
+
+	}
+
+	public String[] receiveMessage(String token) throws RemoteException{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

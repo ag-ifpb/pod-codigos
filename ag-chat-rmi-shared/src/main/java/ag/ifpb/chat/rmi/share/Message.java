@@ -1,7 +1,5 @@
 package ag.ifpb.chat.rmi.share;
 
-import java.util.UUID;
-
 /**
  * Representa a mensagem.
  * 
@@ -49,6 +47,13 @@ public class Message {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	@Override
+	public String toString() {
+		return "Message [ID=" + ID + ", user=" + user + ", content=" + content + "]";
+	}
+	
+	
 	
 	
 	

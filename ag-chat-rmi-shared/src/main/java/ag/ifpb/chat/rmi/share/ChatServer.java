@@ -1,5 +1,38 @@
 package ag.ifpb.chat.rmi.share;
 
+/*
+
+DROP TABLE users;
+DROP TABLE messages;
+DROP TABLE messages_users;
+DROP TABLE users_connected;
+
+CREATE TABLE users(
+	uemail VARCHAR(100) NOT NULL PRIMARY KEY
+);
+ 
+CREATE TABLE messages(
+	id bigint PRIMARY KEY,
+	ufrom varchar(100) NOT NULL,
+	text varchar(256) NOT NULL,
+	is_removed boolean NOT NULL
+);
+
+CREATE TABLE users_connected(
+	token varchar(100) PRIMARY KEY
+	uemail varchar(100) NOT NULL,
+	is_removed boolean NOT NULL
+ );
+ 
+CREATE TABLE messages_users(
+	message_id bigint NOT NULL,
+	uto varchar(100) NOT NULL,
+	ufrom varchar(100) NOT NULL,
+  	is_sended  boolean NOT NULL
+);
+
+
+ */
 public interface ChatServer {
 	
 	/**
@@ -52,6 +85,7 @@ public interface ChatServer {
 	 *  message_user(
 	 *    message_id long,
 	 *    to varchar(100), --email do destinatário
+	 *    from varchar(100), --email da origem
 	 *    is_sended boolean
 	 *  )
 	 * 

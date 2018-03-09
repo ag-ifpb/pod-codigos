@@ -1,0 +1,5 @@
+package ag.ifpb.ag_chat.rmi.server;
+
+public class Connector {
+
+}
