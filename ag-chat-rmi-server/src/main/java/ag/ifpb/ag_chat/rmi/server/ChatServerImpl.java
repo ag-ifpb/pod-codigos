@@ -98,7 +98,7 @@ public class ChatServerImpl implements ChatServer {
 	public void remove(Message msg) {
 		Connection conn = Connector.init();
 		try {
-			String sql = "DELETE FROM messages WHERE id = ?;";
+			String sql = "UPDATE messages SET is_removed = true WHERE id = ?;";
 			//
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setLong(1, msg.getID());

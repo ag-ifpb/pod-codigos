@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun ag.ifpb.ag_chat.rmi.server.RMIChatServiceImplTest" project="ag-chat-rmi-server" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="ag.ifpb.ag_chat.rmi.server.RMIChatServiceImplTest" time="5.194">
-    <testcase name="test" classname="ag.ifpb.ag_chat.rmi.server.RMIChatServiceImplTest" time="5.194"/>
-  </testsuite>
-</testrun>

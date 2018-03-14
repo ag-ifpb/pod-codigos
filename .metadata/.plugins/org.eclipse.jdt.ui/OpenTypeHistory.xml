@@ -2,4 +2,5 @@
 <typeInfoHistroy>
 <typeInfo handle="=ag-threads-with-pg/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_91.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1459498886000"/>
 <typeInfo handle="=ag-threads-with-pg/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_91.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.util.concurrent(BlockingQueue.class[BlockingQueue" modifiers="1537" timestamp="1459498886000"/>
+<typeInfo handle="=ag-chat-rmi-shared/src\/main\/java&lt;ag.ifpb.chat.rmi.share{RMIChatService.java[RMIChatService" modifiers="513" timestamp="1520612931000"/>
 </typeInfoHistroy>

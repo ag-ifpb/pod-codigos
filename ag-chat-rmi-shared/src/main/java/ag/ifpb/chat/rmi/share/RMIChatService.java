@@ -24,7 +24,7 @@ public interface RMIChatService extends Remote {
 	void sendMessage(String token, String text) throws RemoteException;
 	
 	/**
-	 * Receber uma mensagem a partir a identificação da sessão do usuário
+	 * Receber UMA mensagem a partir a identificação da sessão do usuário
 	 * 
 	 * @param token
 	 * @return um vetor contendo o email do usuário e o texto da mensagem, 

@@ -26,9 +26,8 @@ public class RMIChatServiceImpl implements RMIChatService {
 	public String login(String email) throws RemoteException{
 		Session session = chatServer.login(email);
 		//
-		saveSession(session);//TODO: criar a sessão no banco de dados
-		//
 		if (session != null){
+			saveSession(session);//TODO: criar a sessão no banco de dados
 			return session.getToken();
 		} else {
 			return null;
@@ -44,6 +43,10 @@ public class RMIChatServiceImpl implements RMIChatService {
 			}
 		}
 		//
+		if (user == null){
+			throw new RemoteException("Sessão inválida!");
+		}
+		//
 		Message m = new Message();
 		m.setID(System.currentTimeMillis());
 		m.setUser(user);
@@ -53,7 +56,8 @@ public class RMIChatServiceImpl implements RMIChatService {
 	}
 
 	public String[] receiveMessage(String token) throws RemoteException{
-		// TODO Auto-generated method stub
+		// TODO recuperar na lista de notificações e verificar quais correspondem
+		// ao meu token e devolver
 		return null;
 	}
 

@@ -11,7 +11,27 @@ public class HelloClientImpl {
 	public static void main(String[] args) throws RemoteException, NotBoundException, InterruptedException {
 		Registry registry = LocateRegistry.getRegistry(10999);
 		Hello hello = (Hello) registry.lookup("helloService");
-		hello.hello("Ari Garcia");
+		Thread t0 = new Thread(){
+			public void run() {
+				try{
+					hello.hello("Ari Garcia");
+				} catch(RemoteException e){
+					e.printStackTrace();
+				}
+			};
+		};
+		Thread t1 = new Thread(){
+			public void run() {
+				try {
+					hello.hello("Ari Garcia");
+				} catch(RemoteException e){
+					e.printStackTrace();
+				}
+			};
+		};
+		//
+		t0.start();
+		t1.start();
 	}
 	
 }

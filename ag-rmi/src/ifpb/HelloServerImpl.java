@@ -25,8 +25,10 @@ public class HelloServerImpl extends UnicastRemoteObject implements Hello{
 	}
 	
 	public static void main(String[] args) throws AccessException, RemoteException, AlreadyBoundException {
+		System.out.println("Servidor Iniciando");
 		Registry registry = LocateRegistry.createRegistry(10999);
 		registry.bind("helloService", new HelloServerImpl());
+		System.out.println("Servidor Iniciado");
 	}
 	
 }
